@@ -3030,6 +3030,7 @@
     const pgClearTimers = () => { pgTimers.forEach(clearTimeout); pgTimers = []; };
     const pgShuffle = (arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
+    function bestKoVoice(){try{const vs=speechSynthesis.getVoices().filter(v=>/^ko/i.test((v.lang||'').replace('_','-'))); if(!vs.length) return null; let want=null; try{want=localStorage.getItem('studyroomVoice');}catch(e){} const m=want&&vs.find(v=>v.voiceURI===want); if(m) return m; const sc=v=>(/premium|프리미엄/i.test(v.name)?50:0)+(/enhanced|향상/i.test(v.name)?40:0)+(/natural|neural|online/i.test(v.name)?30:0)+(/google/i.test(v.name)?10:0)+(/yuna|유나/i.test(v.name)?5:0)+(v.localService?1:0); return vs.slice().sort((a,b)=>sc(b)-sc(a))[0];}catch(e){return null;}}
     function speakKorean(text, rate = 0.8) {
       if (!('speechSynthesis' in window)) return;
       try {
@@ -3037,7 +3038,7 @@
         const u = new SpeechSynthesisUtterance(text);
         u.lang = 'ko-KR';
         u.rate = rate;
-        const ko = window.speechSynthesis.getVoices().find(v => v.lang && v.lang.replace('_', '-').toLowerCase().startsWith('ko'));
+        const ko = bestKoVoice();
         if (ko) u.voice = ko;
         window.speechSynthesis.speak(u);
       } catch (e) {}
