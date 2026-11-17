@@ -720,7 +720,7 @@
     <div class="flex items-center justify-between border-b border-pink-100 pb-2 mb-3">
       <div class="flex space-x-1.5 overflow-x-auto no-scrollbar py-1" id="categoryTabs">
         <button data-cat="dress" class="cat-btn active bg-pink-500 text-white px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm font-bold transition shadow">
-          👗 드레스 10종
+          👗 드레스
         </button>
         <button data-cat="top" class="cat-btn bg-pink-100 text-pink-700 hover:bg-pink-200 px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm font-bold transition">
           👚 상의 (Top)
@@ -735,7 +735,7 @@
           💇 헤어 (Hair)
         </button>
         <button data-cat="jewelry" class="cat-btn bg-pink-100 text-pink-700 hover:bg-pink-200 px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm font-bold transition">
-          💎 주얼리 (Jewelry)
+          💎 모자·소품
         </button>
         <button data-cat="school" class="cat-btn bg-pink-100 text-pink-700 hover:bg-pink-200 px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm font-bold transition">
           🏫 삼육초 & IT
@@ -1412,6 +1412,189 @@
         </svg>
       `,
 
+      /* ================= 🌸☀️🍂❄️ 사계절 옷 ================= */
+      // 🌸 봄: 벚꽃 원피스 — 퍼프 소매, 동그란 흰 카라, 벚꽃 무늬
+      dressCherry: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.25, 12, '#fce7f3', '#db2777')}
+          ${svgSkirt({ y1: 208, half: 54, n: 8, bulge: 5, fill: '#fbcfe8', line: '#db2777', fold: '#f9a8d4' })}
+          ${svgBodice('#fdf2f8', '#db2777', 'high', 128)}
+          <path d="M 100 97 Q 90 110 84 98 Q 88 93 100 97 Z M 100 97 Q 110 110 116 98 Q 112 93 100 97 Z" fill="#ffffff" stroke="#db2777" stroke-width="1.1" stroke-linejoin="round"/>
+          <rect x="81" y="124" width="38" height="6" rx="3" fill="#f472b6" stroke="#be185d" stroke-width="1"/>
+          <path d="M 100 127 L 92 122 L 92 132 Z M 100 127 L 108 122 L 108 132 Z" fill="#ec4899" stroke="#be185d" stroke-width="0.9" stroke-linejoin="round"/>
+          ${svgDaisy(70, 166, 3.4, '#f472b6', '#fef3c7')}${svgDaisy(96, 156, 3.4, '#f472b6', '#fef3c7')}${svgDaisy(124, 168, 3.4, '#f472b6', '#fef3c7')}
+          ${svgDaisy(84, 186, 3.4, '#f472b6', '#fef3c7')}${svgDaisy(112, 192, 3.4, '#f472b6', '#fef3c7')}${svgDaisy(58, 196, 3, '#f472b6', '#fef3c7')}${svgDaisy(142, 196, 3, '#f472b6', '#fef3c7')}
+          ${svgDaisy(90, 114, 2.4, '#f9a8d4', '#fef3c7')}${svgDaisy(110, 116, 2.4, '#f9a8d4', '#fef3c7')}
+          <path d="M 50 200 Q 100 214 150 200" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-dasharray="1 6" stroke-linecap="round"/>
+        </svg>
+      `,
+      // 🌸 봄: 노란 비옷 — 무릎까지 오는 코트, 떡볶이 단추, 주머니
+      topRaincoat: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.97, 17, '#facc15', '#a16207')}
+          <path d="M 76 99 L 88 95 Q 100 104 112 95 L 124 99 L 127 150 L 133 198 Q 100 205 67 198 L 73 150 Z" fill="#fde047" stroke="#a16207" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M 80 98 Q 72 90 78 86 Q 100 96 122 86 Q 128 90 120 98 Q 100 108 80 98 Z" fill="#facc15" stroke="#a16207" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M 100 104 V 200" stroke="#a16207" stroke-width="1.6"/>
+          <g fill="#ffffff" stroke="#a16207" stroke-width="1"><rect x="95" y="116" width="10" height="3.4" rx="1.7"/><rect x="95" y="136" width="10" height="3.4" rx="1.7"/><rect x="95" y="156" width="10" height="3.4" rx="1.7"/><rect x="95" y="176" width="10" height="3.4" rx="1.7"/></g>
+          <path d="M 78 160 H 92 V 172 Q 85 176 78 172 Z M 108 160 H 122 V 172 Q 115 176 108 172 Z" fill="#facc15" stroke="#a16207" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M 70 192 Q 100 199 130 192" fill="none" stroke="#fef9c3" stroke-width="2.4"/>
+          <path d="M 82 112 q 3 -6 7 -8" fill="none" stroke="#fef9c3" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      `,
+      // 🌸 봄: 민트 카디건 — 흰 티 위에 앞이 열린 니트
+      topCardigan: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.97, 15, '#99f6e4', '#0f766e')}
+          ${svgBodice('#ffffff', '#cbd5e1', 'round', 152)}
+          <path d="M 77 99 L 89 95 L 97 152 L 79 154 Z M 123 99 L 111 95 L 103 152 L 121 154 Z" fill="#99f6e4" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M 89 95 L 97 152 M 111 95 L 103 152" stroke="#5eead4" stroke-width="3" stroke-linecap="round"/>
+          <g fill="#fda4af" stroke="#be123c" stroke-width="0.8"><circle cx="93.5" cy="114" r="2.2"/><circle cx="94.8" cy="128" r="2.2"/><circle cx="96" cy="142" r="2.2"/></g>
+          <rect x="78" y="150" width="20" height="6" rx="2.5" fill="#5eead4" stroke="#0f766e" stroke-width="1"/>
+          <rect x="102" y="150" width="20" height="6" rx="2.5" fill="#5eead4" stroke="#0f766e" stroke-width="1"/>
+          ${svgDaisy(110, 124, 2.4, '#fda4af', '#fef3c7')}
+        </svg>
+      `,
+      // ☀️ 여름: 수영복 — 물방울 무늬 원피스 수영복 + 짧은 프릴
+      dressSwimsuit: `
+        <svg viewBox="0 0 200 300">
+          <path d="M 88 96 L 87 108 M 112 96 L 113 108" stroke="#0284c7" stroke-width="3.4" stroke-linecap="round"/>
+          ${svgSkirt({ y0: 136, y1: 160, half: 34, n: 8, fill: '#7dd3fc', line: '#0284c7', fold: '#38bdf8' })}
+          ${svgBodice('#38bdf8', '#0369a1', 'sweet', 140)}
+          <g fill="#ffffff"><circle cx="88" cy="118" r="2.4"/><circle cx="100" cy="126" r="2.4"/><circle cx="112" cy="116" r="2.4"/><circle cx="92" cy="134" r="2"/><circle cx="110" cy="133" r="2"/><circle cx="76" cy="152" r="1.8"/><circle cx="100" cy="150" r="1.8"/><circle cx="124" cy="152" r="1.8"/></g>
+          <path d="M 100 112 L 93 107 L 93 117 Z M 100 112 L 107 107 L 107 117 Z" fill="#fb7185" stroke="#be123c" stroke-width="0.9" stroke-linejoin="round"/>
+          <circle cx="100" cy="112" r="2.2" fill="#be123c"/>
+        </svg>
+      `,
+      // 🍂 가을: 체크 원피스 — 긴소매, 흰 카라, 머스터드 체크
+      dressPlaid: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.95, 13, '#9f1239', '#4c0519')}
+          ${svgSkirt({ y1: 212, half: 52, n: 7, fill: '#be123c', line: '#4c0519', fold: 'rgba(251,191,36,.75)' })}
+          <g stroke="rgba(251,191,36,.75)" stroke-width="2"><path d="M 75 150 H 125"/><path d="M 64 174 H 136"/><path d="M 54 198 H 146"/></g>
+          <g stroke="rgba(76,5,25,.45)" stroke-width="4"><path d="M 72 162 H 128"/><path d="M 60 186 H 140"/></g>
+          ${svgBodice('#9f1239', '#4c0519', 'high', 128)}
+          <g stroke="rgba(251,191,36,.6)" stroke-width="1.6"><path d="M 90 100 V 126 M 110 100 V 126 M 80 112 H 120"/></g>
+          <path d="M 100 96 Q 90 108 84 97 Q 88 92 100 96 Z M 100 96 Q 110 108 116 97 Q 112 92 100 96 Z" fill="#ffffff" stroke="#4c0519" stroke-width="1" stroke-linejoin="round"/>
+          <rect x="81" y="124" width="38" height="6" rx="2" fill="#451a03" stroke="#1c0a02" stroke-width="1"/>
+          <rect x="96" y="123.5" width="8" height="7" rx="1.5" fill="none" stroke="#fbbf24" stroke-width="1.6"/>
+          <path d="M 66 204 Q 100 214 134 204" fill="none" stroke="#fbbf24" stroke-width="2"/>
+        </svg>
+      `,
+      // 🍂 가을: 트렌치코트 — 베이지 롱코트, 넓은 깃, 허리띠, 두 줄 단추
+      topTrench: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.97, 16, '#d6b98c', '#7c5a2e')}
+          <path d="M 45 139 L 58 145 M 155 139 L 142 145" stroke="#a8875a" stroke-width="5" stroke-linecap="round"/>
+          <path d="M 76 99 L 88 95 L 100 112 L 112 95 L 124 99 L 127 150 L 134 204 Q 100 210 66 204 L 73 150 Z" fill="#e2c799" stroke="#7c5a2e" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M 88 95 L 82 112 L 92 116 L 100 112 Z M 112 95 L 118 112 L 108 116 L 100 112 Z" fill="#d6b98c" stroke="#7c5a2e" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M 100 112 L 106 206" stroke="#7c5a2e" stroke-width="1.5"/>
+          <g fill="#5c3d1a"><circle cx="94" cy="122" r="2"/><circle cx="110" cy="122" r="2"/><circle cx="94" cy="140" r="2"/><circle cx="110" cy="140" r="2"/><circle cx="96" cy="160" r="2"/><circle cx="112" cy="160" r="2"/></g>
+          <rect x="73" y="128" width="54" height="8" rx="2" fill="#c4a174" stroke="#7c5a2e" stroke-width="1.2"/>
+          <rect x="96" y="127" width="11" height="10" rx="1.5" fill="none" stroke="#5c3d1a" stroke-width="1.8"/>
+          <path d="M 84 136 Q 82 150 78 156 M 120 136 L 124 152" stroke="#c4a174" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      `,
+      // ❄️ 겨울: 패딩 점퍼 — 빵빵한 누빔, 털 달린 깃, 지퍼
+      topPadding: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.97, 19, '#c4b5fd', '#5b21b6')}
+          <g fill="none" stroke="#7c3aed" stroke-width="1.3" stroke-linecap="round"><path d="M 60 124 l 10 6 M 140 124 l -10 6 M 54 136 l 9 5 M 146 136 l -9 5"/></g>
+          <path d="M 73 100 Q 76 94 100 94 Q 124 94 127 100 L 130 160 Q 100 168 70 160 Z" fill="#c4b5fd" stroke="#5b21b6" stroke-width="1.8" stroke-linejoin="round"/>
+          <g fill="none" stroke="#7c3aed" stroke-width="1.5"><path d="M 72 116 Q 100 124 128 116"/><path d="M 71 132 Q 100 140 129 132"/><path d="M 70 148 Q 100 156 130 148"/></g>
+          <g fill="#ddd6fe" opacity="0.8"><ellipse cx="84" cy="108" rx="6" ry="3"/><ellipse cx="84" cy="124" rx="6" ry="3"/><ellipse cx="84" cy="140" rx="6" ry="3"/></g>
+          <path d="M 100 98 V 164" stroke="#4c1d95" stroke-width="2"/>
+          <rect x="97.5" y="102" width="5" height="8" rx="1.5" fill="#e5e7eb" stroke="#4c1d95" stroke-width="0.8"/>
+          <g fill="#ffffff" stroke="#e5e7eb" stroke-width="0.8"><circle cx="78" cy="96" r="6"/><circle cx="86" cy="91" r="6"/><circle cx="94" cy="90" r="5.5"/><circle cx="106" cy="90" r="5.5"/><circle cx="114" cy="91" r="6"/><circle cx="122" cy="96" r="6"/></g>
+        </svg>
+      `,
+      // ❄️ 겨울: 산타 원피스 — 빨간 원피스, 하얀 털 장식, 검은 벨트
+      dressSanta: `
+        <svg viewBox="0 0 200 300">
+          ${svgSleeves(0.97, 14, '#dc2626', '#7f1d1d')}
+          <circle cx="52" cy="143" r="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/><circle cx="148" cy="143" r="6" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+          ${svgSkirt({ y1: 200, half: 52, n: 7, bulge: 4, fill: '#ef4444', line: '#7f1d1d', fold: '#dc2626' })}
+          <path d="M 49 200 Q 100 214 151 200" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+          ${svgBodice('#ef4444', '#7f1d1d', 'round', 128)}
+          <path d="M 86 96 Q 100 110 114 96" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+          <g fill="#ffffff"><circle cx="100" cy="112" r="2.6"/><circle cx="100" cy="120" r="2.6"/></g>
+          <rect x="80" y="124" width="40" height="7" rx="2" fill="#1f2937"/>
+          <rect x="95" y="123" width="10" height="9" rx="1.5" fill="none" stroke="#fbbf24" stroke-width="2"/>
+          <path d="M 70 168 l 2 5 l 5 2 l -5 2 l -2 5 l -2 -5 l -5 -2 l 5 -2 Z M 128 176 l 2 5 l 5 2 l -5 2 l -2 5 l -2 -5 l -5 -2 l 5 -2 Z" fill="#fde68a"/>
+        </svg>
+      `,
+      // ❄️ 겨울: 눈꽃 레깅스
+      bottomLeggings: `
+        <svg viewBox="0 0 200 300">
+          <path d="M 78 140 H 122 L 123 170 L 117 252 H 104 L 101 176 H 99 L 96 252 H 83 L 77 170 Z" fill="#818cf8" stroke="#4338ca" stroke-width="1.6" stroke-linejoin="round"/>
+          <rect x="77" y="138" width="46" height="8" rx="3" fill="#6366f1" stroke="#4338ca" stroke-width="1"/>
+          ${svgSnowflake(88, 170, 4)}${svgSnowflake(112, 176, 4)}${svgSnowflake(90, 204, 3.6)}${svgSnowflake(110, 214, 3.6)}${svgSnowflake(89, 236, 3)}${svgSnowflake(110, 240, 3)}
+        </svg>
+      `,
+      // 🌸 봄: 노란 장화
+      shoesRainBoots: svgPair(x => `
+        <path d="M ${x - 10} 224 H ${x + 10} L ${x + 11} 260 Q ${x} 266 ${x - 12} 261 Z" fill="#facc15" stroke="#a16207" stroke-width="1.3" stroke-linejoin="round"/>
+        <rect x="${x - 11}" y="221" width="22" height="6" rx="2.5" fill="#eab308" stroke="#a16207" stroke-width="1"/>
+        <path d="M ${x - 12.5} 260 Q ${x} 268 ${x + 12} 260 L ${x + 12} 264 Q ${x} 270 ${x - 12.5} 264 Z" fill="#78350f"/>
+        <path d="M ${x - 6} 231 V 252" stroke="#fef9c3" stroke-width="2.6" stroke-linecap="round"/>
+      `),
+      // ☀️ 여름: 꽃 샌들
+      shoesSandals: svgPair(x => `
+        <path d="M ${x - 11} 262 Q ${x - 12} 256 ${x - 8} 255.5 H ${x + 8} Q ${x + 12} 256 ${x + 11} 262 Q ${x} 266 ${x - 11} 262 Z" fill="#d6a46a" stroke="#92400e" stroke-width="1.1" stroke-linejoin="round"/>
+        <path d="M ${x - 8} 246 Q ${x} 250 ${x + 8} 246 M ${x - 8} 257 L ${x + 7} 250 M ${x + 8} 257 L ${x - 7} 250" fill="none" stroke="#ec4899" stroke-width="2.4" stroke-linecap="round"/>
+        ${svgDaisy(x, 252, 1.8, '#ffffff', '#f59e0b')}
+      `),
+      // ☀️ 여름: 밀짚모자 (머리 위)
+      hatStraw: `
+        <svg viewBox="0 0 200 300">
+          <ellipse cx="100" cy="38" rx="50" ry="11" fill="#f3d58a" stroke="#a16207" stroke-width="1.5"/>
+          <path d="M 76 38 C 74 8 126 8 124 38 Z" fill="#facc6b" stroke="#a16207" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M 76.5 30 Q 100 36 123.5 30 L 124 37 Q 100 43 76 37 Z" fill="#f472b6" stroke="#be185d" stroke-width="1"/>
+          <path d="M 120 33 l 9 -5 l 1 9 Z" fill="#ec4899"/>
+          <g fill="none" stroke="#ca8a04" stroke-width="0.9" opacity="0.7"><path d="M 60 40 Q 100 50 140 40"/><path d="M 84 20 Q 100 16 116 20"/><path d="M 80 27 Q 100 22 120 27"/></g>
+        </svg>
+      `,
+      // 🍂 가을: 베레모
+      hatBeret: `
+        <svg viewBox="0 0 200 300">
+          <ellipse cx="96" cy="27" rx="35" ry="13" transform="rotate(-8 96 27)" fill="#9f1239" stroke="#4c0519" stroke-width="1.5"/>
+          <path d="M 70 34 Q 100 42 126 32" fill="none" stroke="#4c0519" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 96 14 l 1 -6" stroke="#4c0519" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="86" cy="22" rx="9" ry="3.4" transform="rotate(-10 86 22)" fill="#e11d48" opacity="0.6"/>
+        </svg>
+      `,
+      // ❄️ 겨울: 방울 털모자
+      hatBeanie: `
+        <svg viewBox="0 0 200 300">
+          <path d="M 70 42 C 68 6 132 6 130 42 Z" fill="#f472b6" stroke="#9d174d" stroke-width="1.5" stroke-linejoin="round"/>
+          <g fill="none" stroke="#db2777" stroke-width="1.4"><path d="M 86 14 Q 82 26 82 40"/><path d="M 100 11 V 40"/><path d="M 114 14 Q 118 26 118 40"/></g>
+          <rect x="67" y="35" width="66" height="12" rx="6" fill="#fbcfe8" stroke="#9d174d" stroke-width="1.4"/>
+          <path d="M 74 37 v 8 M 82 37 v 8 M 90 37 v 8 M 98 37 v 8 M 106 37 v 8 M 114 37 v 8 M 122 37 v 8" stroke="#f9a8d4" stroke-width="1.6"/>
+          <circle cx="100" cy="8" r="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+          <circle cx="97" cy="6" r="2.4" fill="#f1f5f9"/>
+        </svg>
+      `,
+      // ❄️ 겨울: 줄무늬 목도리 (목걸이 자리)
+      scarfWinter: `
+        <svg viewBox="0 0 200 300">
+          <path d="M 108 98 L 118 98 L 120 134 L 108 136 Z" fill="#ef4444" stroke="#7f1d1d" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M 108.4 108 L 118.6 107.6 M 108.8 118 L 119.2 117.4 M 109.2 128 L 119.8 127.2" stroke="#ffffff" stroke-width="3"/>
+          <path d="M 109 136 v 5 M 112 136 v 5 M 115 135.5 v 5 M 118 135 v 5" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M 80 88 Q 100 99 120 88 L 123 99 Q 100 112 77 99 Z" fill="#ef4444" stroke="#7f1d1d" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M 85 92 L 84 104 M 95 95 L 95 108 M 105 95 L 106 108 M 115 92 L 117 104" stroke="#ffffff" stroke-width="3"/>
+        </svg>
+      `,
+      // ❄️ 겨울: 벙어리 장갑 (반지 자리, 양손)
+      mittens: `
+        <svg viewBox="0 0 200 300">
+          ${[0, 1].map(m => `<g ${m ? 'transform="translate(200 0) scale(-1 1)"' : ''}>
+            <path d="M 44 140 Q 43 154 50 156 Q 57 154 56 140 Q 55 136 50 136 Q 45 136 44 140 Z" fill="#38bdf8" stroke="#0369a1" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M 55 145 Q 60 144 59 149 Q 57 152 54.5 150" fill="#38bdf8" stroke="#0369a1" stroke-width="1.1" stroke-linejoin="round"/>
+            <rect x="43.5" y="134" width="13" height="5" rx="2" fill="#ffffff" stroke="#0369a1" stroke-width="1"/>
+            <path d="M 47 147 l 3 -3 l 3 3 l -3 3 Z" fill="#ffffff"/>
+          </g>`).join('')}
+        </svg>
+      `,
+
       // ROOM & FURNITURE ASSETS
       doorplate: `
         <svg viewBox="0 0 260 120">
@@ -1712,18 +1895,27 @@
       { id: 'dress_sundress', word: 'Sundress', phonics: '[선드레스]', meaning: '데이지 썸머 원피스', cat: 'dress', type: 'dress', svgKey: 'dressSundress', hint: '노란 데이지 꽃잎이 수놓아진 시원한 여름 원피스!' },
       { id: 'dress_pajamas', word: 'Pajama Dress', phonics: '[파자마 드레스]', meaning: '곰돌이 잠옷 원피스', cat: 'dress', type: 'dress', svgKey: 'dressPajamas', hint: '포근포근 침대에서 꿀잠 자는 곰돌이 수면 파자마!' },
       { id: 'dress_ballgown', word: 'Ballgown', phonics: '[볼가운]', meaning: '순백의 웨딩 벨라인 드레스', cat: 'dress', type: 'dress', svgKey: 'dressBallgown', hint: '왕실 무도회에 가는 눈부신 순백의 볼가운 드레스!' },
+      { id: 'dress_cherry', word: 'Blossom Dress', phonics: '[블라섬 드레스]', meaning: '🌸 봄 벚꽃 원피스', cat: 'dress', type: 'dress', svgKey: 'dressCherry', hint: '봄바람에 벚꽃잎이 흩날리는 분홍 원피스!' },
+      { id: 'dress_swimsuit', word: 'Swimsuit', phonics: '[스윔슈트]', meaning: '☀️ 여름 수영복', cat: 'dress', type: 'dress', svgKey: 'dressSwimsuit', hint: '바다와 수영장에서 첨벙첨벙! 물방울 무늬 수영복!' },
+      { id: 'dress_plaid', word: 'Plaid Dress', phonics: '[플래드 드레스]', meaning: '🍂 가을 체크 원피스', cat: 'dress', type: 'dress', svgKey: 'dressPlaid', hint: '단풍잎 색깔 체크무늬에 하얀 카라가 달린 가을 원피스!' },
+      { id: 'dress_santa', word: 'Santa Dress', phonics: '[산타 드레스]', meaning: '❄️ 겨울 산타 원피스', cat: 'dress', type: 'dress', svgKey: 'dressSanta', hint: '하얀 털이 보송보송! 크리스마스 산타 원피스!' },
 
       // --- CATEGORY: TOPS (상의) ---
       { id: 'top_sy_vest', word: 'School Vest', phonics: '[스쿨 베스트]', meaning: '태강삼육초 조끼 셔츠', cat: 'top', type: 'top', svgKey: 'topSYVest', hint: '단정한 넥타이와 금빛 엠블럼이 있는 니트 조끼!' },
       { id: 'top_tshirt', word: 'T-Shirt', phonics: '[티셔츠]', meaning: '하트 반팔 티셔츠', cat: 'top', type: 'top', svgKey: 'topTshirt', hint: '가운데 빨간 하트가 그려진 깔끔한 화이트 티셔츠!' },
       { id: 'top_hoodie', word: 'Hoodie', phonics: '[후디]', meaning: '보라색 후드티', cat: 'top', type: 'top', svgKey: 'topHoodie', hint: '모자가 달리고 주머니가 있는 따뜻하고 편한 후드티!' },
       { id: 'top_knit', word: 'Knit Sweater', phonics: '[니트 스웨터]', meaning: '포근한 니트 스웨터', cat: 'top', type: 'top', svgKey: 'topKnit', hint: '따뜻한 털실로 포근하게 짠 가을 니트 스웨터!' },
+      { id: 'top_cardigan', word: 'Cardigan', phonics: '[카디건]', meaning: '🌸 봄 민트 카디건', cat: 'top', type: 'top', svgKey: 'topCardigan', hint: '쌀쌀한 봄날 살짝 걸치는 민트색 카디건!' },
+      { id: 'top_raincoat', word: 'Raincoat', phonics: '[레인코트]', meaning: '🌸 봄 노란 비옷', cat: 'top', type: 'top', svgKey: 'topRaincoat', hint: '봄비가 주룩주룩 와도 끄떡없는 노란 비옷!', crop: '30 78 140 132' },
+      { id: 'top_trench', word: 'Trench Coat', phonics: '[트렌치 코트]', meaning: '🍂 가을 트렌치코트', cat: 'top', type: 'top', svgKey: 'topTrench', hint: '허리띠를 질끈 묶는 멋쟁이 가을 코트!', crop: '30 78 140 136' },
+      { id: 'top_padding', word: 'Puffer Jacket', phonics: '[퍼퍼 재킷]', meaning: '❄️ 겨울 패딩 점퍼', cat: 'top', type: 'top', svgKey: 'topPadding', hint: '빵빵하게 부풀어서 눈 오는 날에도 따뜻한 패딩!', crop: '34 78 132 96' },
 
       // --- CATEGORY: BOTTOMS (하의) ---
       { id: 'bottom_sy_pants', word: 'School Pants', phonics: '[스쿨 팬츠]', meaning: '교복 슬랙스 바지', cat: 'bottom', type: 'bottom', svgKey: 'bottomSYPants', hint: '활동하기 편하고 단정한 네이비 정장 바지!' },
       { id: 'bottom_pink_skirt', word: 'Pleated Skirt', phonics: '[플리츠 스커트]', meaning: '핑크 주름치마', cat: 'bottom', type: 'bottom', svgKey: 'bottomPinkSkirt', hint: '살랑살랑 주름이 예쁜 사랑스러운 핑크 스커트!' },
       { id: 'bottom_blue_jeans', word: 'Blue Jeans', phonics: '[블루 진스]', meaning: '청바지', cat: 'bottom', type: 'bottom', svgKey: 'bottomBlueJeans', hint: '어디에나 잘 어울리는 멋진 파란색 데님 청바지!' },
       { id: 'bottom_shorts', word: 'Shorts', phonics: '[쇼츠]', meaning: '시원한 반바지', cat: 'bottom', type: 'bottom', svgKey: 'bottomShorts', hint: '뛰어놀기 좋은 시원하고 가벼운 하늘색 반바지!' },
+      { id: 'bottom_leggings', word: 'Leggings', phonics: '[레깅스]', meaning: '❄️ 겨울 눈꽃 레깅스', cat: 'bottom', type: 'bottom', svgKey: 'bottomLeggings', hint: '눈꽃 무늬가 콕콕! 다리를 따뜻하게 감싸는 레깅스!' },
 
       // --- CATEGORY: SHOES (신발) ---
       { id: 'shoes_enamel', word: 'Mary Janes', phonics: '[메리 제인스]', meaning: '단정한 에나멜 구두', cat: 'shoes', type: 'shoes', svgKey: 'shoesEnamel', hint: '반짝반짝 광이 나는 단정한 학교용 에나멜 구두!' },
@@ -1731,6 +1923,8 @@
       { id: 'shoes_slippers', word: 'Glass Slippers', phonics: '[글래스 슬리퍼스]', meaning: '신데렐라 유리구두', cat: 'shoes', type: 'shoes', svgKey: 'shoesGlassSlippers', hint: '보석처럼 투명하게 빛나는 마법의 유리구두!' },
       { id: 'shoes_boots', word: 'Boots', phonics: '[부츠]', meaning: '포근한 겨울 부츠', cat: 'shoes', type: 'shoes', svgKey: 'shoesWinterBoots', hint: '하얀 털이 달린 따뜻하고 푹신한 겨울 어그 부츠!' },
       { id: 'shoes_ballet', word: 'Ballet Shoes', phonics: '[발레 슈즈]', meaning: '발레 토슈즈', cat: 'shoes', type: 'shoes', svgKey: 'shoesBalletFlats', hint: '리본을 발목에 묶는 부드러운 핑크빛 토슈즈!' },
+      { id: 'shoes_rainboots', word: 'Rain Boots', phonics: '[레인 부츠]', meaning: '🌸 봄 노란 장화', cat: 'shoes', type: 'shoes', svgKey: 'shoesRainBoots', hint: '물웅덩이도 첨벙첨벙 건너는 노란 장화!', crop: '68 216 64 56' },
+      { id: 'shoes_sandals', word: 'Sandals', phonics: '[샌들즈]', meaning: '☀️ 여름 꽃 샌들', cat: 'shoes', type: 'shoes', svgKey: 'shoesSandals', hint: '발가락이 시원한 꽃 장식 여름 샌들!' },
 
       // Category: Hair
       { id: 'hair_twintail', word: 'Twin Pigtails', phonics: '[트윈 피그테일즈]', meaning: '양갈래 땋은 머리', cat: 'hair', type: 'hair', svgKey: 'hairTwinTail', hint: '핑크 리본으로 귀엽게 묶은 양갈래 머리!' },
@@ -1743,6 +1937,11 @@
       { id: 'jewel_necklace', word: 'Necklace', phonics: '[네클리스]', meaning: '하트 목걸이', cat: 'jewelry', type: 'necklace', svgKey: 'jewelryNecklace', hint: '가슴 위에서 반짝이는 레드 하트 목걸이!' },
       { id: 'jewel_earrings', word: 'Earrings', phonics: '[이어링스]', meaning: '별빛 귀걸이', cat: 'jewelry', type: 'earrings', svgKey: 'jewelryEarrings', hint: '양쪽 귀에서 달랑달랑 춤추는 별빛 귀걸이!' },
       { id: 'jewel_ring', word: 'Jewel Ring', phonics: '[주얼 링]', meaning: '보석 반지', cat: 'jewelry', type: 'ring', svgKey: 'jewelryRing', hint: '손가락에 끼우는 반짝이는 루비 보석 반지!' },
+      { id: 'hat_straw', word: 'Straw Hat', phonics: '[스트로 햇]', meaning: '☀️ 여름 밀짚모자', cat: 'jewelry', type: 'tiara', svgKey: 'hatStraw', hint: '뜨거운 햇볕을 가려주는 리본 밀짚모자!', crop: '44 0 112 56' },
+      { id: 'hat_beret', word: 'Beret', phonics: '[베레]', meaning: '🍂 가을 베레모', cat: 'jewelry', type: 'tiara', svgKey: 'hatBeret', hint: '화가처럼 비스듬히 쓰는 가을 베레모!', crop: '56 0 88 50' },
+      { id: 'hat_beanie', word: 'Beanie', phonics: '[비니]', meaning: '❄️ 겨울 방울 털모자', cat: 'jewelry', type: 'tiara', svgKey: 'hatBeanie', hint: '꼭대기에 하얀 방울이 달린 포근한 털모자!', crop: '60 -2 80 54' },
+      { id: 'scarf_winter', word: 'Scarf', phonics: '[스카프]', meaning: '❄️ 겨울 목도리', cat: 'jewelry', type: 'necklace', svgKey: 'scarfWinter', hint: '목을 감싸 따뜻하게! 빨간 줄무늬 목도리!', crop: '70 82 60 64' },
+      { id: 'mittens', word: 'Mittens', phonics: '[미튼즈]', meaning: '❄️ 겨울 벙어리 장갑', cat: 'jewelry', type: 'ring', svgKey: 'mittens', hint: '눈사람 만들 때 꼭 끼는 벙어리 장갑!', crop: '36 131 30 28' },
 
       // Category: School & IT
       { id: 'doorplate', word: 'Doorplate', phonics: '[도어플레이트]', meaning: '가온 하우스 문패', cat: 'school', type: 'furniture', defaultW: 130, defaultH: 60, svgKey: 'doorplate', hint: '방 벽에 거는 가온이만의 황금빛 원목 문패!' },
@@ -2033,7 +2232,7 @@
         const inner = s => (s || '').replace(/<\/?svg[^>]*>/g, '');
         return `<svg viewBox="40 4 120 150">${inner(SVG_LIB[item.svgKey + 'Back'])}${inner(SVG_LIB.avatarBody)}${inner(svg)}</svg>`;
       }
-      const crop = THUMB_CROP[item.type];
+      const crop = item.crop || THUMB_CROP[item.type];
       return crop ? svg.replace('0 0 200 300', crop) : svg;
     }
 
@@ -2759,7 +2958,7 @@
        10. QUEST QUIZ MODE
        ===================================================================== */
     let questNextTimer = null;
-    const CATEGORY_NAMES = { dress: '👗 드레스', top: '👚 상의', bottom: '👖 하의', shoes: '👠 신발', hair: '💇 헤어', jewelry: '💎 주얼리', school: '🏫 삼육초 & IT', furniture: '🪑 가구' };
+    const CATEGORY_NAMES = { dress: '👗 드레스', top: '👚 상의', bottom: '👖 하의', shoes: '👠 신발', hair: '💇 헤어', jewelry: '💎 모자·소품', school: '🏫 삼육초 & IT', furniture: '🪑 가구' };
 
     function renderQuestPrompt(showMeaning) {
       const q = currentQuest;
@@ -3610,7 +3809,7 @@
     const runRnd = (i, k) => { const v = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return v - Math.floor(v); };
 
     function runPool() {
-      const extra = ['shoes_sneakers', 'shoes_boots', 'dress_ballet', 'dress_hanbok', 'top_hoodie', 'bottom_blue_jeans'];
+      const extra = ['shoes_sneakers', 'shoes_boots', 'dress_ballet', 'dress_hanbok', 'top_hoodie', 'bottom_blue_jeans', 'dress_swimsuit', 'top_raincoat', 'shoes_rainboots', 'hat_straw', 'hat_beanie', 'mittens'];
       return VOCAB_ITEMS.filter(v => !v.customSvg && SVG_LIB[v.svgKey] &&
         ((v.type === 'furniture' && !['doorplate', 'curtains', 'rug', 'frame', 'cushion'].includes(v.id)) || extra.includes(v.id)));
     }
@@ -3746,10 +3945,10 @@
         for (let i = 0; i < 5; i++) R.ents.push({ k: 'star', x: x + i * H * 0.11, y: GY - PH * 0.45 - lift - Math.sin(i / 4 * Math.PI) * H * 0.22 });
       };
       if (e.k === 'stars') starArc(x0, 0);
-      else if (e.k === 'rock') R.ents.push({ k: 'obs', type: 'rock', x: x0, w: H * 0.1, h: H * 0.07 });
-      else if (e.k === 'puddle') R.ents.push({ k: 'obs', type: 'puddle', x: x0, w: H * 0.17, h: H * 0.03 });
-      else if (e.k === 'bush') R.ents.push({ k: 'obs', type: 'bush', x: x0, w: H * 0.12, h: H * 0.09 });
-      else if (e.k === 'rockStars') { R.ents.push({ k: 'obs', type: 'rock', x: x0 + H * 0.22, w: H * 0.1, h: H * 0.07 }); starArc(x0, H * 0.06); }
+      else if (e.k === 'rock') R.ents.push({ k: 'obs', type: 'rock', x: x0, w: H * 0.13, h: H * 0.1 });
+      else if (e.k === 'puddle') R.ents.push({ k: 'obs', type: 'cone', x: x0, w: H * 0.1, h: H * 0.13 });
+      else if (e.k === 'bush') R.ents.push({ k: 'obs', type: Math.random() < 0.5 ? 'stump' : 'crate', x: x0, w: H * 0.12, h: H * 0.11 });
+      else if (e.k === 'rockStars') { R.ents.push({ k: 'obs', type: 'rock', x: x0 + H * 0.22, w: H * 0.13, h: H * 0.1 }); starArc(x0, H * 0.08); }
       else if (e.k === 'mission') {
         R.mission = e.item;
         document.getElementById('runMissionEn').textContent = e.item.word;
@@ -3987,17 +4186,49 @@
           runStar(c, e.x, e.y + bob, H * 0.03, Math.sin(t * 3 + e.x) * 0.2); c.fill(); c.stroke();
           c.fillStyle = 'rgba(255,255,255,.7)'; c.beginPath(); c.arc(e.x - H * 0.008, e.y + bob - H * 0.008, H * 0.006, 0, 7); c.fill();
         } else if (e.k === 'obs' && !e.gone) {
+          // 장애물: 진한 테두리 + 또렷한 색 + 다가오면 "점프!" 표지판
+          const x = e.x, w = e.w, h = e.h, lw = Math.max(2.5, H * 0.006);
+          c.fillStyle = 'rgba(60,20,30,.22)'; c.beginPath(); c.ellipse(x, GY + H * 0.006, w * 0.62, H * 0.016, 0, 0, 7); c.fill();
+          c.lineWidth = lw; c.strokeStyle = '#3b2314'; c.lineJoin = 'round';
           if (e.type === 'rock') {
-            c.fillStyle = 'rgba(0,0,0,.12)'; c.beginPath(); c.ellipse(e.x, GY + H * 0.004, e.w * 0.55, H * 0.012, 0, 0, 7); c.fill();
-            c.fillStyle = '#a8a29e'; c.beginPath(); c.ellipse(e.x, GY - e.h * 0.45, e.w * 0.5, e.h * 0.55, 0, Math.PI, 0); c.lineTo(e.x + e.w * 0.5, GY); c.lineTo(e.x - e.w * 0.5, GY); c.fill();
-            c.fillStyle = '#d6d3d1'; c.beginPath(); c.ellipse(e.x - e.w * 0.15, GY - e.h * 0.7, e.w * 0.18, e.h * 0.15, -0.3, 0, 7); c.fill();
-          } else if (e.type === 'puddle') {
-            c.fillStyle = '#60a5fa'; c.beginPath(); c.ellipse(e.x, GY + H * 0.004, e.w * 0.5, e.h * 0.55, 0, 0, 7); c.fill();
-            c.fillStyle = '#bfdbfe'; c.beginPath(); c.ellipse(e.x - e.w * 0.12, GY, e.w * 0.2, e.h * 0.16, 0, 0, 7); c.fill();
+            c.fillStyle = '#8b8580'; c.beginPath();
+            c.moveTo(x - w * 0.5, GY); c.bezierCurveTo(x - w * 0.56, GY - h * 0.7, x - w * 0.2, GY - h * 1.05, x + w * 0.08, GY - h);
+            c.bezierCurveTo(x + w * 0.42, GY - h * 0.95, x + w * 0.58, GY - h * 0.5, x + w * 0.5, GY); c.closePath(); c.fill(); c.stroke();
+            c.fillStyle = '#b8b2ad'; c.beginPath(); c.ellipse(x - w * 0.14, GY - h * 0.72, w * 0.16, h * 0.12, -0.4, 0, 7); c.fill();
+            c.fillStyle = '#5b5550'; c.beginPath(); c.ellipse(x + w * 0.22, GY - h * 0.3, w * 0.07, h * 0.05, 0, 0, 7); c.fill();
+          } else if (e.type === 'cone') {
+            c.fillStyle = '#f97316'; c.beginPath(); c.moveTo(x - w * 0.12, GY - h); c.lineTo(x + w * 0.12, GY - h); c.lineTo(x + w * 0.38, GY - h * 0.12); c.lineTo(x - w * 0.38, GY - h * 0.12); c.closePath(); c.fill(); c.stroke();
+            c.fillStyle = '#ffffff'; c.beginPath(); c.moveTo(x - w * 0.2, GY - h * 0.72); c.lineTo(x + w * 0.2, GY - h * 0.72); c.lineTo(x + w * 0.27, GY - h * 0.5); c.lineTo(x - w * 0.27, GY - h * 0.5); c.closePath(); c.fill();
+            c.fillStyle = '#ea580c'; c.fillRect(x - w * 0.5, GY - h * 0.14, w, h * 0.14); c.strokeRect(x - w * 0.5, GY - h * 0.14, w, h * 0.14);
+          } else if (e.type === 'stump') {
+            c.fillStyle = '#a0622d'; c.beginPath(); c.moveTo(x - w * 0.42, GY); c.lineTo(x - w * 0.38, GY - h * 0.82); c.lineTo(x + w * 0.38, GY - h * 0.82); c.lineTo(x + w * 0.42, GY); c.closePath(); c.fill(); c.stroke();
+            c.fillStyle = '#e9b97a'; c.beginPath(); c.ellipse(x, GY - h * 0.82, w * 0.38, h * 0.15, 0, 0, 7); c.fill(); c.stroke();
+            c.strokeStyle = '#b07a45'; c.lineWidth = lw * 0.6; c.beginPath(); c.ellipse(x, GY - h * 0.82, w * 0.22, h * 0.08, 0, 0, 7); c.stroke();
+            c.strokeStyle = '#6b3a14'; c.beginPath(); c.moveTo(x - w * 0.18, GY - h * 0.6); c.lineTo(x - w * 0.2, GY - h * 0.1); c.moveTo(x + w * 0.12, GY - h * 0.55); c.lineTo(x + w * 0.14, GY - h * 0.15); c.stroke();
+            c.fillStyle = '#4ade80'; c.beginPath(); c.ellipse(x + w * 0.42, GY - h * 0.55, w * 0.1, h * 0.05, -0.6, 0, 7); c.fill();
           } else {
-            c.fillStyle = '#22a35a'; c.beginPath();
-            c.arc(e.x - e.w * 0.25, GY - e.h * 0.35, e.h * 0.4, 0, 7); c.arc(e.x + e.w * 0.25, GY - e.h * 0.35, e.h * 0.4, 0, 7); c.arc(e.x, GY - e.h * 0.6, e.h * 0.45, 0, 7); c.fill();
-            c.fillStyle = '#ef4444'; [[-0.2, 0.55], [0.15, 0.75], [0.3, 0.35], [-0.35, 0.3]].forEach(([a, b]) => { c.beginPath(); c.arc(e.x + e.w * a, GY - e.h * b, H * 0.007, 0, 7); c.fill(); });
+            c.fillStyle = '#d99a4e'; c.fillRect(x - w * 0.45, GY - h * 0.9, w * 0.9, h * 0.9); c.strokeRect(x - w * 0.45, GY - h * 0.9, w * 0.9, h * 0.9);
+            c.strokeStyle = '#8a5a26'; c.lineWidth = lw * 0.8;
+            c.beginPath(); c.moveTo(x - w * 0.45, GY - h * 0.9); c.lineTo(x + w * 0.45, GY); c.moveTo(x - w * 0.45, GY - h * 0.45); c.lineTo(x + w * 0.45, GY - h * 0.45); c.stroke();
+            c.fillStyle = 'rgba(255,255,255,.25)'; c.fillRect(x - w * 0.4, GY - h * 0.86, w * 0.8, h * 0.08);
+          }
+          // 귀여운 눈 (무섭지 않게)
+          if (e.type !== 'crate') {
+            const ey = GY - h * (e.type === 'cone' ? 0.3 : 0.45);
+            c.fillStyle = '#1f1410';
+            c.beginPath(); c.arc(x - w * 0.12, ey, H * 0.007, 0, 7); c.arc(x + w * 0.12, ey, H * 0.007, 0, 7); c.fill();
+          }
+          // 다가오면 통통 튀는 "점프!" 표지판
+          const ahead = x - px;
+          if (ahead > H * 0.15 && ahead < W * 0.75) {
+            const by = GY - h - H * 0.07 - Math.abs(Math.sin(t * 8)) * H * 0.025, br = H * 0.034;
+            c.fillStyle = '#ef4444'; c.strokeStyle = '#ffffff'; c.lineWidth = H * 0.006;
+            c.beginPath(); c.arc(x, by, br, 0, 7); c.fill(); c.stroke();
+            c.beginPath(); c.moveTo(x - br * 0.45, by + br * 0.2); c.lineTo(x, by - br * 0.45); c.lineTo(x + br * 0.45, by + br * 0.2); c.strokeStyle = '#fff'; c.lineWidth = H * 0.008; c.lineCap = 'round'; c.stroke();
+            c.font = `bold ${H * 0.03}px Jua, sans-serif`; c.textAlign = 'center';
+            c.lineWidth = H * 0.008; c.strokeStyle = '#fff'; c.strokeText('점프!', x, by - br - H * 0.012);
+            c.fillStyle = '#dc2626'; c.fillText('점프!', x, by - br - H * 0.012);
+            c.lineCap = 'butt';
           }
         } else if (e.k === 'bubble') {
           if (e.gone) continue;
