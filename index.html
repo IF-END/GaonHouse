@@ -101,20 +101,55 @@
       background-size: 30px 30px;
     }
 
+    /* 원목 마루: 판자 이음새 + 엇갈린 끝 이음새 + 판자마다 다른 색 + 나뭇결 */
     .floor-wood-warm {
-      background-color: #e8c08c;
+      background-color: #e4b57c;
       background-image:
-        linear-gradient(#c99a62 2px, transparent 2px),
-        linear-gradient(90deg, #d3a872 2px, transparent 2px),
-        linear-gradient(90deg, #d3a872 2px, transparent 2px);
-      background-size: 100% 36px, 150px 72px, 150px 72px;
-      background-position: 0 0, 0 0, 75px 36px;
+        linear-gradient(rgba(122,72,30,.45) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(122,72,30,.35) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(122,72,30,.35) 1.5px, transparent 1.5px),
+        linear-gradient(rgba(255,255,255,.10) 0 18px, rgba(150,90,40,.08) 18px 36px, rgba(255,240,210,.10) 36px 54px, rgba(140,80,30,.05) 54px 72px),
+        repeating-linear-gradient(90deg, rgba(160,100,50,.08) 0 2px, transparent 2px 23px, rgba(255,255,255,.07) 23px 25px, transparent 25px 41px),
+        linear-gradient(90deg, #e9bd86, #dfac70 30%, #e8b97f 55%, #dba869 80%, #e6b67b);
+      background-size: 100% 36px, 168px 72px, 168px 72px, 100% 72px, 100% 100%, 100% 100%;
+      background-position: 0 0, 0 0, 84px 36px, 0 0, 0 0, 0 0;
     }
+    /* 파스텔 타일: 줄눈 + 타일마다 은은한 광택 */
     .floor-pastel-tile {
-      background-color: #fff1f2;
-      background-image: linear-gradient(#fecdd3 2px, transparent 2px), linear-gradient(to right, #fecdd3 2px, #fff1f2 2px);
-      background-size: 34px 34px;
+      background-color: #ffe4ec;
+      background-image:
+        linear-gradient(#ffffff 2px, transparent 2px), linear-gradient(90deg, #ffffff 2px, transparent 2px),
+        radial-gradient(circle at 30% 28%, rgba(255,255,255,.75), rgba(255,255,255,0) 55%),
+        linear-gradient(45deg, #ffd3e0 25%, transparent 25%, transparent 75%, #ffd3e0 75%),
+        linear-gradient(45deg, #ffd3e0 25%, transparent 25%, transparent 75%, #ffd3e0 75%);
+      background-size: 46px 46px, 46px 46px, 46px 46px, 92px 92px, 92px 92px;
+      background-position: 0 0, 0 0, 0 0, 0 0, 46px 46px;
     }
+
+    /* 방 꾸밈: 벽 조명 · 걸레받이 판넬 · 창문 커튼 · 가랜드 */
+    .wall-light { position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(120% 70% at 30% 0%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%),
+                  linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(120,50,80,.10)); }
+    .wainscot { position: absolute; left: 0; right: 0; bottom: 0; height: 74px; pointer-events: none;
+      background:
+        linear-gradient(#fff 0 6px, #f3d6e1 6px 9px, transparent 9px),
+        repeating-linear-gradient(90deg, transparent 0 14px, rgba(219,39,119,.16) 14px 16px, rgba(255,255,255,.9) 16px 18px, transparent 18px 106px, rgba(219,39,119,.16) 106px 108px, rgba(255,255,255,.9) 108px 110px, transparent 110px 124px),
+        linear-gradient(180deg, #fff7fa, #fbe4ee);
+      box-shadow: 0 -2px 6px rgba(150,60,100,.08); }
+    .wainscot::before { content: ''; position: absolute; left: 0; right: 0; top: 18px; bottom: 12px;
+      background: repeating-linear-gradient(90deg, transparent 0 16px, rgba(255,255,255,.65) 16px 108px, transparent 108px 124px);
+      border-top: 2px solid rgba(219,39,119,.12); border-bottom: 2px solid rgba(219,39,119,.12); }
+    .wainscot::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 9px; background: linear-gradient(#f9d5e3, #e7aac3); }
+    .floor-shade { position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(180deg, rgba(70,30,10,.28), rgba(70,30,10,0) 22%),
+                  radial-gradient(90% 120% at 50% 110%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%),
+                  linear-gradient(90deg, rgba(60,20,0,.12), rgba(0,0,0,0) 18%, rgba(0,0,0,0) 82%, rgba(60,20,0,.12)); }
+    #roomWindow { right: 40px !important; width: 128px !important; height: 128px !important; top: 26px !important; z-index: 2;
+      box-shadow: inset 0 0 0 4px #fff, 0 6px 14px rgba(120,40,80,.18) !important; border-color: #fff7fb !important; }
+    #roomWindow::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(125deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.35) 38%, rgba(255,255,255,0) 46%, rgba(255,255,255,0) 58%, rgba(255,255,255,.22) 63%, rgba(255,255,255,0) 68%); }
+    .win-deco { position: absolute; top: 6px; right: 14px; width: 180px; height: 182px; pointer-events: none; z-index: 3; }
+    .garland { position: absolute; top: 0; left: 70px; width: 460px; height: 46px; pointer-events: none; }
 
     .sky-day { background: linear-gradient(to bottom, #60a5fa, #bfdbfe); }
     .sky-sunset { background: linear-gradient(to bottom, #ea580c, #f59e0b, #ec4899); }
@@ -335,6 +370,31 @@
     @media (max-width: 1180px) {
       #schoolChip { display: none; }
     }
+
+    /* =================== 🏃 가온이 별빛 달리기 =================== */
+    #runBtn { grid-column: 1 / -1; white-space: nowrap; background: linear-gradient(135deg, #f59e0b, #ec4899); color: #fff;
+      border-radius: .8rem; padding: .4rem .3rem; font-size: .8rem; font-weight: 800; box-shadow: 0 3px 8px rgba(236,72,153,.3); }
+    #runBtn:active { transform: scale(.95); }
+    #runModal { position: fixed; inset: 0; z-index: 60; background: #bfe7ff; touch-action: none; }
+    #runModal.hidden { display: none; }
+    #runCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .run-top { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+      padding: max(.5rem, env(safe-area-inset-top)) max(.75rem, env(safe-area-inset-right)) 0 max(.75rem, env(safe-area-inset-left)); pointer-events: none; }
+    .run-top > * { pointer-events: auto; }
+    .run-chip { background: rgba(255,255,255,.92); border: 3px solid #fbcfe8; border-radius: 999px; padding: .3rem .9rem; font-weight: 800; color: #9d174d; font-size: 1.1rem; }
+    #runMission { position: absolute; left: 50%; top: max(3.6rem, calc(env(safe-area-inset-top) + 3.1rem)); transform: translateX(-50%); pointer-events: none;
+      background: #fff; border: 4px solid #a78bfa; border-radius: 1.4rem; padding: .35rem 1.2rem; text-align: center; box-shadow: 0 6px 0 #ddd6fe; transition: opacity .3s; }
+    #runMission .en { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 5vmin, 2.4rem); color: #5b21b6; line-height: 1.1; }
+    #runMission .ko { font-size: .95rem; color: #7c3aed; }
+    #runMission.hide { opacity: 0; }
+    #runOverlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+      background: rgba(255,255,255,.55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); text-align: center; padding: 1rem; }
+    #runOverlay.hidden { display: none; }
+    .run-card { background: #fff; border: 5px solid #f9a8d4; border-radius: 2rem; padding: 1.2rem 1.6rem; box-shadow: 0 10px 0 #fbcfe8; max-width: 640px; width: 100%; }
+    .run-words { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-top: .6rem; }
+    .run-word { background: #f5f3ff; border: 3px solid #c4b5fd; border-radius: 1rem; padding: .3rem .6rem .3rem .3rem; display: flex; align-items: center; gap: .3rem; font-family: 'Nunito', sans-serif; font-weight: 900; color: #5b21b6; }
+    .run-word div { width: 2.4rem; height: 2.4rem; }
+    .run-word svg { width: 100%; height: 100%; }
   </style>
 </head>
 <body class="bg-rose-50/70 text-slate-800 min-h-screen flex flex-col items-center justify-start p-2 sm:p-4 overflow-x-hidden">
@@ -494,10 +554,38 @@
       <div id="roomStage" class="rounded-3xl shadow-xl overflow-hidden border-4 border-pink-300 bg-white select-none">
         <!-- Wall -->
         <div id="roomWall" class="absolute inset-x-0 top-0 h-[70%] pattern-pink-stripe transition-colors duration-500 overflow-hidden">
-          <div class="w-full h-3 bg-black/5 border-b border-pink-300/40"></div>
-          <div class="absolute top-1 left-20 right-28 flex justify-around text-base opacity-75 pointer-events-none">
-            <span>🌸</span><span>⭐</span><span>🎀</span><span>⭐</span><span>🌸</span><span>⭐</span><span>🎀</span>
-          </div>
+          <div class="wall-light"></div>
+          <div class="w-full h-3 border-b border-pink-300/40" style="background:linear-gradient(#fff,#fdf2f8);position:relative"></div>
+          <!-- 삼각 깃발 가랜드 -->
+          <svg class="garland" viewBox="0 0 460 46">
+            <path d="M 0 6 Q 115 30 230 8 Q 345 30 460 6" fill="none" stroke="#c084a4" stroke-width="1.6"/>
+            <g stroke="rgba(0,0,0,.08)" stroke-width="1">
+              <path d="M 18 10 L 38 14 L 26 34 Z" fill="#f9a8d4"/><path d="M 48 15 L 69 18 L 56 38 Z" fill="#fde68a"/>
+              <path d="M 80 19 L 101 20 L 89 41 Z" fill="#a5f3fc"/><path d="M 113 21 L 134 20 L 124 41 Z" fill="#c4b5fd"/>
+              <path d="M 146 19 L 167 17 L 158 38 Z" fill="#fda4af"/><path d="M 179 15 L 199 12 L 191 33 Z" fill="#bbf7d0"/>
+              <path d="M 260 12 L 281 15 L 268 33 Z" fill="#fde68a"/><path d="M 292 17 L 313 19 L 301 38 Z" fill="#f9a8d4"/>
+              <path d="M 325 20 L 346 21 L 336 41 Z" fill="#c4b5fd"/><path d="M 358 21 L 379 19 L 369 40 Z" fill="#a5f3fc"/>
+              <path d="M 391 17 L 411 14 L 403 35 Z" fill="#bbf7d0"/><path d="M 422 12 L 442 9 L 434 30 Z" fill="#fda4af"/>
+            </g>
+            <g fill="#fff" opacity=".7"><circle cx="27" cy="17" r="2"/><circle cx="90" cy="27" r="2"/><circle cx="157" cy="25" r="2"/><circle cx="270" cy="20" r="2"/><circle cx="335" cy="28" r="2"/><circle cx="401" cy="22" r="2"/></g>
+            <path d="M 222 8 Q 214 0 208 6 Q 214 12 222 10 Z M 238 8 Q 246 0 252 6 Q 246 12 238 10 Z" fill="#ec4899"/>
+            <circle cx="230" cy="9" r="4" fill="#db2777"/>
+            <path d="M 227 12 L 222 26 M 233 12 L 238 26" stroke="#ec4899" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <!-- 창문 커튼 · 봉 · 창틀 받침 -->
+          <svg class="win-deco" viewBox="0 0 180 182">
+            <rect x="16" y="146" width="148" height="10" rx="3" fill="#fff" stroke="#f3c4d6" stroke-width="1.5"/>
+            <rect x="22" y="156" width="136" height="4" rx="2" fill="#f5d0de"/>
+            <path d="M 10 14 C 12 60 30 96 44 112 C 34 130 24 150 18 166 L 8 166 C 6 120 4 60 6 14 Z" fill="#f9a8d4"/>
+            <path d="M 10 14 C 14 50 22 84 36 106 M 7 40 C 9 80 14 120 13 160" fill="none" stroke="#ec4899" stroke-width="1.4" opacity=".45"/>
+            <path d="M 170 14 C 168 60 150 96 136 112 C 146 130 156 150 162 166 L 172 166 C 174 120 176 60 174 14 Z" fill="#f9a8d4"/>
+            <path d="M 170 14 C 166 50 158 84 144 106 M 173 40 C 171 80 166 120 167 160" fill="none" stroke="#ec4899" stroke-width="1.4" opacity=".45"/>
+            <path d="M 30 104 Q 40 100 46 110 Q 38 118 28 114 Z M 150 104 Q 140 100 134 110 Q 142 118 152 114 Z" fill="#f472b6" stroke="#db2777" stroke-width="1"/>
+            <path d="M 8 12 Q 24 30 40 12 Q 56 30 72 12 Q 90 30 108 12 Q 124 30 140 12 Q 156 30 172 12 L 172 8 L 8 8 Z" fill="#fbcfe8" stroke="#f472b6" stroke-width="1.2" stroke-linejoin="round"/>
+            <g fill="#fff"><circle cx="24" cy="19" r="1.6"/><circle cx="56" cy="19" r="1.6"/><circle cx="90" cy="19" r="1.6"/><circle cx="124" cy="19" r="1.6"/><circle cx="156" cy="19" r="1.6"/></g>
+            <rect x="2" y="5" width="176" height="5" rx="2.5" fill="#d6a46a"/>
+            <circle cx="3" cy="7.5" r="5" fill="#f5c26b" stroke="#b7791f" stroke-width="1"/><circle cx="177" cy="7.5" r="5" fill="#f5c26b" stroke="#b7791f" stroke-width="1"/>
+          </svg>
 
           <!-- Interactive Window -->
           <div id="roomWindow" class="absolute top-4 right-4 sm:right-10 w-24 sm:w-32 h-24 sm:h-32 rounded-2xl border-4 border-white shadow-lg overflow-hidden sky-day cursor-pointer group transition-all duration-700 hover:scale-105" title="창문을 톡 누르면 시간과 하늘이 바뀌어요!">
@@ -514,12 +602,12 @@
             </div>
           </div>
 
-          <div class="absolute bottom-0 inset-x-0 h-3.5 bg-amber-100 border-t border-amber-300 shadow-sm z-0"></div>
+          <div class="wainscot"></div>
         </div>
 
         <!-- Floor -->
         <div id="roomFloor" class="absolute inset-x-0 bottom-0 h-[30%] floor-wood-warm shadow-inner transition-colors duration-500">
-          <div class="w-full h-full bg-gradient-to-t from-black/15 to-transparent pointer-events-none"></div>
+          <div class="floor-shade"></div>
         </div>
 
         <!-- Interactive Drop Zone -->
@@ -594,8 +682,7 @@
           <!-- 10. Ring Layer -->
           <div id="layerRing" class="avatar-layer"></div>
           <!-- 11. Tiara / Crown Layer -->
-          <div id="layerTiara" class="avatar-layer"></div>
-        </div>
+          <div id="layerTiara" class="avatar-layer"></div>        </div>
 
         <!-- Current Fitted Status -->
         <div id="outfitStatus" class="w-full bg-pink-50/80 rounded-2xl p-2 text-center border border-pink-200">
@@ -621,6 +708,7 @@
           <button onclick="applyPreset('party')" class="bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 py-1.5 px-1 rounded-xl text-[11px] font-bold transition active:scale-95">
             🎉 파티 퀸
           </button>
+          <button id="runBtn" onclick="openRunGame()">🏃‍♀️ 이 옷으로 달리기!</button>
         </div>
       </div>
     </div>
@@ -829,6 +917,18 @@
     <div id="pgBody" class="pg-body"></div>
   </div>
 
+  <!-- 🏃 가온이 별빛 달리기 (피팅룸에서 입힌 옷 그대로 달려요) -->
+  <div id="runModal" class="hidden">
+    <canvas id="runCanvas"></canvas>
+    <div class="run-top">
+      <button class="pg-btn" style="background:#fff;color:#be185d;border:3px solid #f9a8d4" onclick="closeRunGame()">🏠 그만하기</button>
+      <div class="run-chip" id="runHearts">💖💖💖</div>
+      <div class="run-chip">⭐ <span id="runStars">0</span></div>
+    </div>
+    <div id="runMission" class="hide"><div class="en" id="runMissionEn">Cat</div><div class="ko" id="runMissionKo">이 단어를 찾아서 잡아요!</div></div>
+    <div id="runOverlay"></div>
+  </div>
+
   <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-[100] w-full h-full"></canvas>
 
   <!-- Toast Bubble -->
@@ -919,23 +1019,30 @@
           <path d="M 80 47.5 Q 87 44 93 47" stroke="#7a5236" stroke-width="1.5" fill="none" stroke-linecap="round"/>
           <path d="M 107 47 Q 113 44 120 47.5" stroke="#7a5236" stroke-width="1.5" fill="none" stroke-linecap="round"/>
           <!-- Eyes -->
-          <path d="M 80 57 Q 87 49 94 57 Q 87 62.5 80 57 Z" fill="#FFFFFF"/>
-          <circle cx="87" cy="56" r="4.6" fill="#6b4023"/>
-          <circle cx="87" cy="56" r="2.5" fill="#1f120a"/>
-          <circle cx="85.4" cy="54.2" r="1.4" fill="#FFFFFF"/>
-          <path d="M 79 57.5 Q 87 48.5 95 57" stroke="#2d1b11" stroke-width="1.7" fill="none" stroke-linecap="round"/>
-          <path d="M 106 57 Q 113 49 120 57 Q 113 62.5 106 57 Z" fill="#FFFFFF"/>
-          <circle cx="113" cy="56" r="4.6" fill="#6b4023"/>
-          <circle cx="113" cy="56" r="2.5" fill="#1f120a"/>
-          <circle cx="111.4" cy="54.2" r="1.4" fill="#FFFFFF"/>
-          <path d="M 105 57 Q 113 48.5 121 57.5" stroke="#2d1b11" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+          <!-- 반짝이는 큰 눈 (흰자 · 갈색 눈동자 · 빛 두 개 · 속눈썹) -->
+          <path d="M 79 57.5 Q 87 47 95 57.5 Q 87 64.5 79 57.5 Z" fill="#FFFFFF"/>
+          <ellipse cx="87" cy="57" rx="5.4" ry="6" fill="#8a5530"/>
+          <path d="M 81.8 58.5 Q 87 64 92.2 58.5 Q 87 61.2 81.8 58.5 Z" fill="#c08457" opacity="0.8"/>
+          <ellipse cx="87" cy="56.6" rx="2.9" ry="3.3" fill="#1f120a"/>
+          <circle cx="85" cy="54.4" r="1.9" fill="#FFFFFF"/>
+          <circle cx="89.3" cy="59.4" r="0.9" fill="#FFFFFF" opacity="0.9"/>
+          <path d="M 78.5 58 Q 87 47.5 95.5 57.4" stroke="#2d1b11" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <path d="M 79.6 56 L 76.4 53.6 M 81.4 53.4 L 79 50.6" stroke="#2d1b11" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M 105 57.5 Q 113 47 121 57.5 Q 113 64.5 105 57.5 Z" fill="#FFFFFF"/>
+          <ellipse cx="113" cy="57" rx="5.4" ry="6" fill="#8a5530"/>
+          <path d="M 107.8 58.5 Q 113 64 118.2 58.5 Q 113 61.2 107.8 58.5 Z" fill="#c08457" opacity="0.8"/>
+          <ellipse cx="113" cy="56.6" rx="2.9" ry="3.3" fill="#1f120a"/>
+          <circle cx="111" cy="54.4" r="1.9" fill="#FFFFFF"/>
+          <circle cx="115.3" cy="59.4" r="0.9" fill="#FFFFFF" opacity="0.9"/>
+          <path d="M 104.5 57.4 Q 113 47.5 121.5 58" stroke="#2d1b11" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <path d="M 120.4 56 L 123.6 53.6 M 118.6 53.4 L 121 50.6" stroke="#2d1b11" stroke-width="1.3" stroke-linecap="round"/>
           <!-- Nose, Cheeks & Smile -->
           <path d="M 99 66 Q 100.5 67.5 102 66" stroke="#DDA78B" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-          <ellipse cx="80" cy="67" rx="6.5" ry="3.6" fill="#FFB4B4" opacity="0.3"/>
-          <ellipse cx="120" cy="67" rx="6.5" ry="3.6" fill="#FFB4B4" opacity="0.3"/>
-          <ellipse cx="80" cy="67" rx="3.8" ry="2.1" fill="#FFB4B4" opacity="0.35"/>
-          <ellipse cx="120" cy="67" rx="3.8" ry="2.1" fill="#FFB4B4" opacity="0.35"/>
-          <path d="M 94.5 73.5 Q 100 78 105.5 73.5" stroke="#D9607F" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <ellipse cx="79.5" cy="67.5" rx="7" ry="4" fill="#FF9EB0" opacity="0.38"/>
+          <ellipse cx="120.5" cy="67.5" rx="7" ry="4" fill="#FF9EB0" opacity="0.38"/>
+          <path d="M 76.5 67.5 l 1.6 -2 M 79.5 68 l 1.6 -2 M 82.5 67.5 l 1.6 -2 M 117.5 67.5 l 1.6 -2 M 120.5 68 l 1.6 -2 M 123.5 67.5 l 1.6 -2" stroke="#F58BA0" stroke-width="0.9" stroke-linecap="round" opacity="0.7"/>
+          <path d="M 95 73 Q 100 80 105 73 Q 100 75.2 95 73 Z" fill="#E0607E" stroke="#C94A6A" stroke-width="1" stroke-linejoin="round"/>
+          <path d="M 97.6 76.2 Q 100 78.2 102.4 76.2 Q 100 75.6 97.6 76.2 Z" fill="#FF9FB2"/>
           <!-- Arms & Hands -->
           <path d="M 76 99 Q 62 118 52 145" stroke="#FFE2D1" stroke-width="9" fill="none" stroke-linecap="round"/>
           <circle cx="50" cy="147" r="5.5" fill="#FFE2D1"/>
@@ -945,6 +1052,8 @@
           <path d="M 77 100 Q 80 94 100 94 Q 120 94 123 100 L 118 128 Q 124 144 124 162 L 76 162 Q 76 144 82 128 Z" fill="#FFE2D1"/>
           <path d="M 80 156 L 98 156 L 96 254 Q 90 258 84 254 Z" fill="#FFE2D1"/>
           <path d="M 102 156 L 120 156 L 116 254 Q 110 258 104 254 Z" fill="#FFE2D1"/>
+          <path d="M 93 158 L 98 158 L 96 254 Q 94 255.5 92 255 Z M 102 158 L 106.5 158 L 105.5 255 Q 104.5 255.3 104 254 Z" fill="#F5CDB7" opacity="0.7"/>
+          <path d="M 85 204 Q 89 207 93 204 M 107 204 Q 111 207 115 204" stroke="#EDBFA6" stroke-width="1.2" fill="none" stroke-linecap="round"/>
         </svg>
       `,
 
@@ -3117,6 +3226,11 @@
             <h3>문장 부호 탐험대</h3>
             <p>잠깐 쉬는 징검다리 <b>쉼표(,)</b>, 도착 깃발 <b>마침표(.)</b>!<br>빈칸에 스티커를 끌어다 붙여요.</p>
           </button>
+          <button class="pg-menu-card pg-btn" style="background:linear-gradient(135deg,#f59e0b,#ec4899)" onclick="closePlayground();openRunGame()">
+            <div class="big">🏃‍♀️ ⭐ 🐱</div>
+            <h3>가온이 별빛 달리기</h3>
+            <p>피팅룸에서 입힌 옷 그대로 달려요!<br>화면을 톡 눌러 점프! 영어 단어를 듣고 맞는 그림을 잡아요.</p>
+          </button>
         </div>`;
     }
 
@@ -3471,6 +3585,483 @@
           <button class="pg-btn" style="background:#fff;color:#be185d;border:3px solid #f9a8d4;font-size:1.2rem" onclick="closePlayground()">🏠 방 구경하기</button>
         </div>`;
       speakKorean('참 잘했어요! 방에 선물이 도착했어요.', 0.9);
+    }
+
+    /* =====================================================================
+       14. 🏃 가온이 별빛 달리기 — 피팅룸에서 입힌 가온이가 그대로 달려요
+           톡 = 점프, 공중에서 한 번 더 톡 = 빙글 높이 점프
+           영어 단어를 듣고 맞는 그림 풍선을 잡는 미션 6개 → 결승선!
+       ===================================================================== */
+    const runCv = document.getElementById('runCanvas');
+    const runCtx = runCv.getContext('2d');
+    let R = null;
+    const RUN_MISSIONS = 6;
+
+    // SVG 글자를 캔버스에 그릴 수 있는 그림으로 바꿉니다
+    function runSvgImg(svg, w, h) {
+      let s = String(svg).trim().replace(/^<svg([^>]*?)\sclass="[^"]*"/, '<svg$1');
+      if (!/^<svg[^>]*xmlns=/.test(s)) s = s.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+      s = s.replace(/^<svg/, `<svg width="${w}" height="${h}"`);
+      const im = new Image();
+      im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
+      return im;
+    }
+    const runReady = im => im && im.complete && im.naturalWidth > 0;
+    const runRnd = (i, k) => { const v = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return v - Math.floor(v); };
+
+    function runPool() {
+      const extra = ['shoes_sneakers', 'shoes_boots', 'dress_ballet', 'dress_hanbok', 'top_hoodie', 'bottom_blue_jeans'];
+      return VOCAB_ITEMS.filter(v => !v.customSvg && SVG_LIB[v.svgKey] &&
+        ((v.type === 'furniture' && !['doorplate', 'curtains', 'rug', 'frame', 'cushion'].includes(v.id)) || extra.includes(v.id)));
+    }
+
+    function runResize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const W = window.innerWidth, H = window.innerHeight;
+      runCv.width = Math.round(W * dpr); runCv.height = Math.round(H * dpr);
+      runCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      // 세로 화면에서는 너무 빨라지지 않도록 게임 높이를 가로 폭에 맞추고 위쪽은 하늘로 채웁니다
+      if (R) { R.W = W; R.H = Math.min(H, W * 0.72); R.oy = H - R.H; R.sky = null; }
+    }
+    window.addEventListener('resize', () => { if (R) runResize(); });
+
+    function openRunGame() {
+      if (R) { R.on = false; cancelAnimationFrame(R.raf); }
+      playSfx('pop');
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      document.getElementById('runModal').classList.remove('hidden');
+      const pool = runPool();
+      const imgs = {};
+      pool.forEach(it => { imgs[it.id] = runSvgImg(thumbSvg(it), 160, 160); });
+      R = { on: true, state: 'intro', W: 0, H: 0, last: null, t: 0, scroll: 0, speed: 0.8,
+        avatar: runSvgImg(generateAvatarSvg(), 400, 600), pool, imgs,
+        py: 0, vy: 0, onGround: true, jumps: 0, spinT: 0, hurtT: 0,
+        hearts: 3, stars: 0, ents: [], parts: [], events: [], learned: [], missed: [], mission: null, done: 0 };
+      runResize();
+      runHud();
+      document.getElementById('runMission').classList.add('hide');
+      const ov = document.getElementById('runOverlay');
+      ov.classList.remove('hidden');
+      ov.innerHTML = `
+        <div class="run-card">
+          <div style="width:110px;height:165px;margin:0 auto">${generateAvatarSvg()}</div>
+          <div class="text-3xl text-pink-600 font-bold">🏃‍♀️ 가온이 별빛 달리기</div>
+          <div class="text-lg text-slate-600 mt-2">화면을 <b>톡!</b> 누르면 점프해요.<br>공중에서 한 번 더 <b>톡!</b> 하면 빙글 높이 점프!</div>
+          <div class="text-lg text-violet-600 mt-2">🎈 영어 단어를 잘 듣고 <b>맞는 그림 풍선</b>을 잡아요.<br>위에 있는 풍선은 점프해서, 아래 풍선은 그냥 달려서 잡아요!</div>
+        </div>
+        <button class="pg-btn" style="background:linear-gradient(135deg,#f59e0b,#ec4899);color:#fff;font-size:1.6rem;padding:.7rem 2.4rem" onclick="runGo()">출발! 🏁</button>`;
+      speakKorean('가온이 별빛 달리기! 화면을 톡 누르면 점프해요.', 0.9);
+      R.raf = requestAnimationFrame(runLoop);
+    }
+
+    function closeRunGame() {
+      playSfx('pop');
+      if (R) { R.on = false; cancelAnimationFrame(R.raf); }
+      R = null;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      document.getElementById('runModal').classList.add('hidden');
+      fitRoom();
+    }
+
+    // 달리기 길 순서: 별 무리·장애물 사이사이에 단어 미션 6개, 마지막에 결승선
+    function runPlan() {
+      const ev = [];
+      let at = 2.2;
+      const targets = pgShuffle(R.pool).slice(0, RUN_MISSIONS);
+      const fill = n => {
+        for (let i = 0; i < n; i++) {
+          const k = ['stars', 'rock', 'stars', 'puddle', 'bush', 'rockStars'][Math.floor(Math.random() * 6)];
+          ev.push({ at, k });
+          at += 1.9 + Math.random() * 0.6;
+        }
+      };
+      targets.forEach((item, i) => {
+        fill(i === 0 ? 2 : 3);
+        ev.push({ at, k: 'mission', item });
+        ev.push({ at: at + 0.9, k: 'bubbles', item });
+        at += 3.2;
+      });
+      fill(2);
+      ev.push({ at: at + 0.5, k: 'finish' });
+      return ev;
+    }
+
+    function runGo() {
+      if (!R) return;
+      playSfx('sparkle');
+      getAudioCtx();
+      document.getElementById('runOverlay').classList.add('hidden');
+      R.state = 'play';
+      R.events = runPlan();
+      R.dist = 0;
+    }
+
+    function runHud() {
+      document.getElementById('runHearts').textContent = '💖'.repeat(R.hearts) + '🤍'.repeat(3 - R.hearts);
+      document.getElementById('runStars').textContent = R.stars;
+    }
+
+    function runTing(f = 1318.5) {
+      try {
+        const ctx = getAudioCtx(), now = ctx.currentTime;
+        const o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'triangle'; o.frequency.setValueAtTime(f, now); o.frequency.setValueAtTime(f * 1.5, now + 0.05);
+        o.connect(g); g.connect(ctx.destination);
+        g.gain.setValueAtTime(0.09, now); g.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+        o.start(now); o.stop(now + 0.17);
+      } catch (e) {}
+    }
+
+    function runJump() {
+      if (!R || R.state !== 'play') return;
+      const H = R.H;
+      if (R.onGround) {
+        R.vy = -H * 1.45; R.onGround = false; R.jumps = 1; playSfx('pop');
+        runPuff(R.W * 0.18, R.H * 0.8, 6, '#ffffff');
+      } else if (R.jumps < 2) {
+        R.vy = -H * 1.2; R.jumps = 2; R.spinT = 0.55; runTing(880);
+        runPuff(R.W * 0.18, R.H * 0.8 + R.py, 8, '#fde68a');
+      }
+    }
+    document.getElementById('runModal').addEventListener('pointerdown', e => {
+      if (e.target.closest('button') || !document.getElementById('runOverlay').classList.contains('hidden')) return;
+      e.preventDefault();
+      runJump();
+    });
+    window.addEventListener('keydown', e => {
+      if (R && (e.code === 'Space' || e.code === 'ArrowUp')) { e.preventDefault(); runJump(); }
+    });
+    document.addEventListener('visibilitychange', () => { if (R) R.last = null; });
+
+    function runPuff(x, y, n, col) {
+      for (let i = 0; i < n; i++) {
+        const a = Math.PI + Math.random() * Math.PI;
+        R.parts.push({ x, y, vx: Math.cos(a) * R.H * (0.1 + Math.random() * 0.25), vy: Math.sin(a) * R.H * 0.2, life: 0.5 + Math.random() * 0.3, max: 0.8, r: R.H * (0.008 + Math.random() * 0.01), col });
+      }
+    }
+
+    function runSpawn(e) {
+      const H = R.H, GY = H * 0.8, PH = H * 0.3, x0 = R.W + H * 0.12;
+      const starArc = (x, lift) => {
+        for (let i = 0; i < 5; i++) R.ents.push({ k: 'star', x: x + i * H * 0.11, y: GY - PH * 0.45 - lift - Math.sin(i / 4 * Math.PI) * H * 0.22 });
+      };
+      if (e.k === 'stars') starArc(x0, 0);
+      else if (e.k === 'rock') R.ents.push({ k: 'obs', type: 'rock', x: x0, w: H * 0.1, h: H * 0.07 });
+      else if (e.k === 'puddle') R.ents.push({ k: 'obs', type: 'puddle', x: x0, w: H * 0.17, h: H * 0.03 });
+      else if (e.k === 'bush') R.ents.push({ k: 'obs', type: 'bush', x: x0, w: H * 0.12, h: H * 0.09 });
+      else if (e.k === 'rockStars') { R.ents.push({ k: 'obs', type: 'rock', x: x0 + H * 0.22, w: H * 0.1, h: H * 0.07 }); starArc(x0, H * 0.06); }
+      else if (e.k === 'mission') {
+        R.mission = e.item;
+        document.getElementById('runMissionEn').textContent = e.item.word;
+        document.getElementById('runMissionKo').textContent = '🔊 듣고 맞는 그림을 잡아요!';
+        document.getElementById('runMission').classList.remove('hide');
+        speakEnglish(`Catch the ${e.item.word}!`);
+      } else if (e.k === 'bubbles') {
+        const others = R.pool.filter(v => v.id !== e.item.id);
+        const wrong = others[Math.floor(Math.random() * others.length)];
+        const highIsRight = Math.random() < 0.5;
+        const lowY = GY - PH * 0.45, highY = lowY - H * 0.32;
+        R.ents.push({ k: 'bubble', item: e.item, right: true, x: x0, y: highIsRight ? highY : lowY, ph: 0 });
+        R.ents.push({ k: 'bubble', item: wrong, right: false, x: x0, y: highIsRight ? lowY : highY, ph: 1.7 });
+        R.bubbleGroup = { item: e.item, settled: false };
+      } else if (e.k === 'finish') R.ents.push({ k: 'finish', x: x0 + H * 0.3 });
+    }
+
+    function runStep(dt) {
+      const W = R.W, H = R.H, GY = H * 0.8, PH = H * 0.3, PW = PH * 2 / 3, px = W * 0.18;
+      R.t += dt;
+      const sp = H * (R.speed + R.done * 0.04);
+      const dx = sp * dt;
+      R.scroll += dx;
+      R.dist += dx / H;
+      while (R.events.length && R.events[0].at <= R.dist) runSpawn(R.events.shift());
+
+      // 점프 물리
+      if (!R.onGround) {
+        R.vy += H * 3.2 * dt;
+        R.py += R.vy * dt;
+        if (R.py >= 0) { R.py = 0; R.vy = 0; R.onGround = true; R.jumps = 0; runPuff(px, GY, 5, '#fff'); }
+      }
+      if (R.spinT > 0) R.spinT = Math.max(0, R.spinT - dt);
+      if (R.hurtT > 0) R.hurtT = Math.max(0, R.hurtT - dt);
+      if (R.onGround && Math.random() < dt * 9) runPuff(px - PW * 0.15, GY, 1, 'rgba(255,255,255,.9)');
+
+      const feet = GY + R.py, top = feet - PH * 0.78, left = px - PW * 0.22, right = px + PW * 0.22;
+      for (const e of R.ents) {
+        e.x -= dx;
+        if (e.gone) continue;
+        if (e.k === 'star') {
+          const r = H * 0.03;
+          if (e.x + r > left && e.x - r < right && e.y + r > top && e.y - r < feet) {
+            e.gone = true; R.stars++; runHud(); runTing(1318.5 + (R.stars % 5) * 90);
+            runPuff(e.x, e.y, 5, '#fde047');
+          }
+        } else if (e.k === 'obs') {
+          if (R.hurtT <= 0 && e.x + e.w * 0.4 > left && e.x - e.w * 0.4 < right && feet > GY - e.h * 0.7) {
+            e.gone = true; R.hearts--; R.hurtT = 1.4; runHud(); pgChime(false);
+            runPuff(e.x, GY - e.h * 0.5, 10, e.type === 'puddle' ? '#7dd3fc' : '#d6d3d1');
+            R.pops = { text: '앗! 괜찮아!', x: px, y: top - H * 0.05, life: 1 };
+            if (R.hearts <= 0) { runEnd(false); return; }
+          }
+        } else if (e.k === 'bubble') {
+          const r = H * 0.075;
+          if (e.x + r > left && e.x - r < right && e.y + r * 0.6 > top && e.y - r * 0.6 < feet) {
+            const g = R.bubbleGroup;
+            e.gone = true;
+            R.ents.forEach(o => { if (o.k === 'bubble' && o !== e) o.fade = true; });
+            if (g && !g.settled) {
+              g.settled = true;
+              if (e.right) {
+                R.stars += 5; runHud(); pgChime(true);
+                if (!R.learned.includes(e.item)) R.learned.push(e.item);
+                if (!collectedSet.has(e.item.id)) collectedSet.add(e.item.id);
+                speakEnglish(`Great! ${e.item.word}!`);
+                R.pops = { text: `⭐+5  ${e.item.word}`, x: e.x, y: e.y - H * 0.1, life: 1.3 };
+                runPuff(e.x, e.y, 14, '#f9a8d4');
+              } else {
+                pgChime(false);
+                if (!R.missed.includes(g.item)) R.missed.push(g.item);
+                speakEnglish(`Oops! That's ${/^[aeiou]/i.test(e.item.word) ? 'an' : 'a'} ${e.item.word}.`);
+                R.pops = { text: `${e.item.meaning}였어요`, x: e.x, y: e.y - H * 0.1, life: 1.3 };
+                runPuff(e.x, e.y, 8, '#c4b5fd');
+              }
+              R.done++;
+              document.getElementById('runMission').classList.add('hide');
+            }
+          }
+        } else if (e.k === 'finish') {
+          if (e.x < px) { e.gone = true; runEnd(true); return; }
+        }
+      }
+      // 두 풍선을 다 지나쳤으면 단어를 한 번 더 들려주고 다음으로
+      const g = R.bubbleGroup;
+      if (g && !g.settled && R.ents.some(o => o.k === 'bubble') && R.ents.filter(o => o.k === 'bubble').every(o => o.x < left - H * 0.1)) {
+        g.settled = true; R.done++;
+        if (!R.missed.includes(g.item)) R.missed.push(g.item);
+        speakEnglish(g.item.word);
+        document.getElementById('runMission').classList.add('hide');
+      }
+      R.ents = R.ents.filter(e => e.x > -H * 0.5 && !(e.gone && e.k !== 'bubble'));
+      for (const p of R.parts) { p.x += (p.vx - sp * 0.6) * dt; p.y += p.vy * dt; p.vy += H * 0.4 * dt; p.life -= dt; }
+      R.parts = R.parts.filter(p => p.life > 0);
+      if (R.pops) { R.pops.life -= dt; R.pops.y -= H * 0.05 * dt; if (R.pops.life <= 0) R.pops = null; }
+    }
+
+    function runEnd(finished) {
+      R.state = 'end';
+      const bonus = finished ? 10 : 0;
+      const earned = R.stars + bonus;
+      stars += earned;
+      starCountEl.textContent = stars;
+      updateWordBookStats();
+      triggerAutoSave();
+      document.getElementById('runMission').classList.add('hide');
+      if (finished) { fireConfetti(0.5, 0.35); playSfx('sparkle'); }
+      const chip = it => `<div class="run-word"><div>${thumbSvg(it)}</div>${it.word}</div>`;
+      const ov = document.getElementById('runOverlay');
+      ov.classList.remove('hidden');
+      ov.innerHTML = `
+        <div class="run-card">
+          <div style="font-size:3.6rem;line-height:1">${finished ? '🏆' : '🌈'}</div>
+          <div class="text-3xl text-pink-600 font-bold mt-1">${finished ? '결승선 도착!' : '조금 쉬었다 다시 달려요!'}</div>
+          <div class="text-xl text-amber-700 mt-1">모은 별 ⭐ ${R.stars}${bonus ? ` + 완주 보너스 ${bonus}` : ''}</div>
+          ${R.learned.length ? `<div class="text-lg text-violet-700 mt-3">🎈 잡은 영어 단어</div><div class="run-words">${R.learned.map(chip).join('')}</div>` : ''}
+          ${R.missed.length ? `<div class="text-base text-slate-500 mt-3">다음엔 꼭 잡아요!</div><div class="run-words">${R.missed.map(chip).join('')}</div>` : ''}
+        </div>
+        <div class="flex gap-3 flex-wrap justify-center">
+          <button class="pg-btn" style="background:linear-gradient(135deg,#f59e0b,#ec4899);color:#fff;font-size:1.3rem" onclick="openRunGame()">🔁 다시 달리기</button>
+          <button class="pg-btn" style="background:#fff;color:#be185d;border:3px solid #f9a8d4;font-size:1.3rem" onclick="closeRunGame()">👗 옷 갈아입으러 가기</button>
+        </div>`;
+      speakKorean(finished ? `우와! 결승선 도착! 별을 ${earned}개 모았어요.` : '괜찮아요! 옷을 갈아입고 다시 달려 볼까요?', 0.9);
+    }
+
+    function runLoop(ts) {
+      if (!R || !R.on) return;
+      R.raf = requestAnimationFrame(runLoop);
+      if (R.last == null) R.last = ts;
+      const dt = Math.min(0.05, (ts - R.last) / 1000);
+      R.last = ts;
+      if (R.state === 'play') runStep(dt);
+      else { R.t += dt; if (R.state === 'intro') R.scroll += R.H * 0.15 * dt; }
+      if (R) runDraw();
+    }
+
+    /* ---------- 그림 그리기 ---------- */
+    function runStar(c, x, y, r, rot) {
+      c.beginPath();
+      for (let i = 0; i < 10; i++) {
+        const a = rot + i * Math.PI / 5 - Math.PI / 2, rr = i % 2 ? r * 0.45 : r;
+        c.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr);
+      }
+      c.closePath();
+    }
+
+    function runDraw() {
+      const c = runCtx, W = R.W, H = R.H, GY = H * 0.8, PH = H * 0.3, PW = PH * 2 / 3, px = W * 0.18, t = R.t, S = R.scroll;
+      // 하늘
+      if (!R.sky) {
+        R.sky = c.createLinearGradient(0, 0, 0, GY);
+        R.sky.addColorStop(0, '#7cc8ff'); R.sky.addColorStop(0.55, '#c7ebff'); R.sky.addColorStop(1, '#fff0f6');
+      }
+      c.setTransform(1, 0, 0, 1, 0, 0);
+      const dpr = runCv.width / Math.max(1, W);
+      c.setTransform(dpr, 0, 0, dpr, 0, R.oy * dpr);
+      c.fillStyle = R.sky; c.fillRect(0, -R.oy, W, H + R.oy);
+      // 해
+      const sx = W * 0.82, sy = H * 0.16;
+      c.fillStyle = 'rgba(255,240,180,.35)'; c.beginPath(); c.arc(sx, sy, H * 0.11, 0, 7); c.fill();
+      c.fillStyle = '#ffe27a'; c.beginPath(); c.arc(sx, sy, H * 0.065, 0, 7); c.fill();
+      // 구름
+      c.fillStyle = 'rgba(255,255,255,.92)';
+      const cw = H * 0.9, coff = S * 0.08;
+      for (let i = Math.floor(coff / cw) - 1; i <= Math.floor((coff + W) / cw) + 1; i++) {
+        const x = i * cw - coff + runRnd(i, 1) * cw * 0.5, y = H * (0.1 + runRnd(i, 2) * 0.22), s = H * (0.035 + runRnd(i, 3) * 0.025);
+        c.beginPath(); c.arc(x, y, s, 0, 7); c.arc(x + s * 1.1, y - s * 0.5, s * 1.25, 0, 7); c.arc(x + s * 2.3, y, s * 0.95, 0, 7);
+        c.rect(x, y - s * 0.2, s * 2.3, s * 1.1); c.fill();
+      }
+      // 먼 언덕 두 겹
+      const hill = (f, base, amp, k, col) => {
+        const off = S * f;
+        c.fillStyle = col; c.beginPath(); c.moveTo(0, GY);
+        for (let x = 0; x <= W + 20; x += 20) c.lineTo(x, base + Math.sin((x + off) * k) * amp + Math.sin((x + off) * k * 2.3) * amp * 0.35);
+        c.lineTo(W, GY); c.closePath(); c.fill();
+      };
+      hill(0.12, H * 0.5, H * 0.05, 0.004 * 1000 / H, '#d8c8f5');
+      hill(0.25, H * 0.6, H * 0.04, 0.006 * 1000 / H, '#b9e6c3');
+      // 마을 (파스텔 집과 나무)
+      const TW = H * 0.42, hoff = S * 0.5;
+      const HC = ['#fbcfe8', '#fde68a', '#bae6fd', '#ddd6fe', '#fecaca', '#bbf7d0'], RC = ['#ec4899', '#f97316', '#3b82f6', '#8b5cf6', '#ef4444', '#16a34a'];
+      for (let i = Math.floor(hoff / TW) - 1; i <= Math.floor((hoff + W) / TW) + 1; i++) {
+        const x = i * TW - hoff, r = runRnd(i, 4), base = GY - H * 0.035;
+        if (r < 0.3) {
+          const tx = x + TW * 0.5, th = H * (0.12 + runRnd(i, 5) * 0.06);
+          c.fillStyle = '#a16207'; c.fillRect(tx - H * 0.008, base - th * 0.5, H * 0.016, th * 0.5);
+          c.fillStyle = '#4ade80'; c.beginPath(); c.arc(tx, base - th * 0.62, th * 0.32, 0, 7); c.arc(tx - th * 0.2, base - th * 0.5, th * 0.24, 0, 7); c.arc(tx + th * 0.2, base - th * 0.5, th * 0.24, 0, 7); c.fill();
+          c.fillStyle = 'rgba(255,255,255,.25)'; c.beginPath(); c.arc(tx - th * 0.1, base - th * 0.72, th * 0.12, 0, 7); c.fill();
+        } else {
+          const ci = Math.floor(runRnd(i, 6) * HC.length), hw = TW * 0.62, hh = H * (0.12 + runRnd(i, 7) * 0.07), hx = x + (TW - hw) / 2;
+          c.fillStyle = HC[ci]; c.fillRect(hx, base - hh, hw, hh);
+          c.fillStyle = 'rgba(0,0,0,.06)'; c.fillRect(hx + hw * 0.75, base - hh, hw * 0.25, hh);
+          c.fillStyle = RC[ci]; c.beginPath(); c.moveTo(hx - hw * 0.1, base - hh); c.lineTo(hx + hw / 2, base - hh - hw * 0.45); c.lineTo(hx + hw * 1.1, base - hh); c.closePath(); c.fill();
+          c.fillStyle = '#fff8d6'; const ws = hw * 0.18;
+          c.fillRect(hx + hw * 0.16, base - hh * 0.78, ws, ws); c.fillRect(hx + hw * 0.66, base - hh * 0.78, ws, ws);
+          c.fillStyle = '#ffffff'; c.fillRect(hx + hw * 0.16 + ws * 0.45, base - hh * 0.78, ws * 0.1, ws); c.fillRect(hx + hw * 0.66 + ws * 0.45, base - hh * 0.78, ws * 0.1, ws);
+          c.fillStyle = '#92400e'; c.fillRect(hx + hw * 0.42, base - hh * 0.42, hw * 0.18, hh * 0.42);
+        }
+      }
+      // 울타리
+      c.fillStyle = '#ffffff';
+      const fs = H * 0.06, foff = S * 0.8 % fs;
+      c.fillRect(0, GY - H * 0.045, W, H * 0.008); c.fillRect(0, GY - H * 0.022, W, H * 0.008);
+      for (let x = -foff; x < W + fs; x += fs) { c.beginPath(); c.moveTo(x, GY); c.lineTo(x, GY - H * 0.055); c.lineTo(x + H * 0.008, GY - H * 0.065); c.lineTo(x + H * 0.016, GY - H * 0.055); c.lineTo(x + H * 0.016, GY); c.fill(); }
+      // 잔디 띠 + 꽃
+      c.fillStyle = '#86d97a'; c.fillRect(0, GY - H * 0.006, W, H * 0.035);
+      c.fillStyle = '#5fbf57'; c.fillRect(0, GY + H * 0.024, W, H * 0.006);
+      const FT = H * 0.13, ffo = S;
+      for (let i = Math.floor(ffo / FT) - 1; i <= Math.floor((ffo + W) / FT) + 1; i++) {
+        if (runRnd(i, 8) < 0.45) continue;
+        const x = i * FT - ffo + runRnd(i, 9) * FT * 0.6, y = GY + H * 0.008, fr = H * 0.009;
+        c.fillStyle = ['#f9a8d4', '#fde047', '#ffffff', '#c4b5fd'][Math.floor(runRnd(i, 10) * 4)];
+        for (let k = 0; k < 5; k++) { c.beginPath(); c.arc(x + Math.cos(k * 1.257) * fr, y + Math.sin(k * 1.257) * fr, fr * 0.75, 0, 7); c.fill(); }
+        c.fillStyle = '#f59e0b'; c.beginPath(); c.arc(x, y, fr * 0.6, 0, 7); c.fill();
+      }
+      // 보도블록 길
+      const pathTop = GY + H * 0.03;
+      c.fillStyle = '#f6dcc8'; c.fillRect(0, pathTop, W, H - pathTop);
+      c.strokeStyle = 'rgba(180,120,90,.35)'; c.lineWidth = 1.5;
+      const BW = H * 0.12, BH = (H - pathTop) / 3;
+      c.beginPath();
+      for (let row = 0; row < 3; row++) {
+        const y = pathTop + row * BH, o = (S + (row % 2) * BW / 2) % BW;
+        c.moveTo(0, y); c.lineTo(W, y);
+        for (let x = -o; x < W + BW; x += BW) { c.moveTo(x, y); c.lineTo(x, y + BH); }
+      }
+      c.stroke();
+      c.fillStyle = 'rgba(255,255,255,.25)'; c.fillRect(0, pathTop, W, H * 0.012);
+
+      // 물건들
+      for (const e of R.ents) {
+        if (e.k === 'star' && !e.gone) {
+          const bob = Math.sin(t * 5 + e.x * 0.02) * H * 0.006;
+          c.fillStyle = '#facc15'; c.strokeStyle = '#f59e0b'; c.lineWidth = H * 0.004;
+          runStar(c, e.x, e.y + bob, H * 0.03, Math.sin(t * 3 + e.x) * 0.2); c.fill(); c.stroke();
+          c.fillStyle = 'rgba(255,255,255,.7)'; c.beginPath(); c.arc(e.x - H * 0.008, e.y + bob - H * 0.008, H * 0.006, 0, 7); c.fill();
+        } else if (e.k === 'obs' && !e.gone) {
+          if (e.type === 'rock') {
+            c.fillStyle = 'rgba(0,0,0,.12)'; c.beginPath(); c.ellipse(e.x, GY + H * 0.004, e.w * 0.55, H * 0.012, 0, 0, 7); c.fill();
+            c.fillStyle = '#a8a29e'; c.beginPath(); c.ellipse(e.x, GY - e.h * 0.45, e.w * 0.5, e.h * 0.55, 0, Math.PI, 0); c.lineTo(e.x + e.w * 0.5, GY); c.lineTo(e.x - e.w * 0.5, GY); c.fill();
+            c.fillStyle = '#d6d3d1'; c.beginPath(); c.ellipse(e.x - e.w * 0.15, GY - e.h * 0.7, e.w * 0.18, e.h * 0.15, -0.3, 0, 7); c.fill();
+          } else if (e.type === 'puddle') {
+            c.fillStyle = '#60a5fa'; c.beginPath(); c.ellipse(e.x, GY + H * 0.004, e.w * 0.5, e.h * 0.55, 0, 0, 7); c.fill();
+            c.fillStyle = '#bfdbfe'; c.beginPath(); c.ellipse(e.x - e.w * 0.12, GY, e.w * 0.2, e.h * 0.16, 0, 0, 7); c.fill();
+          } else {
+            c.fillStyle = '#22a35a'; c.beginPath();
+            c.arc(e.x - e.w * 0.25, GY - e.h * 0.35, e.h * 0.4, 0, 7); c.arc(e.x + e.w * 0.25, GY - e.h * 0.35, e.h * 0.4, 0, 7); c.arc(e.x, GY - e.h * 0.6, e.h * 0.45, 0, 7); c.fill();
+            c.fillStyle = '#ef4444'; [[-0.2, 0.55], [0.15, 0.75], [0.3, 0.35], [-0.35, 0.3]].forEach(([a, b]) => { c.beginPath(); c.arc(e.x + e.w * a, GY - e.h * b, H * 0.007, 0, 7); c.fill(); });
+          }
+        } else if (e.k === 'bubble') {
+          if (e.gone) continue;
+          if (e.fade) e.alpha = (e.alpha == null ? 1 : e.alpha) - 0.04;
+          if (e.alpha != null && e.alpha <= 0) { e.gone = true; continue; }
+          const r = H * 0.075, y = e.y + Math.sin(t * 3 + e.ph) * H * 0.012;
+          c.save(); c.globalAlpha = e.alpha == null ? 1 : Math.max(0, e.alpha);
+          c.strokeStyle = 'rgba(255,255,255,.9)'; c.lineWidth = 1.5; c.beginPath(); c.moveTo(e.x, y + r); c.quadraticCurveTo(e.x + r * 0.2, y + r * 1.4, e.x, y + r * 1.8); c.stroke();
+          c.fillStyle = 'rgba(255,255,255,.88)'; c.beginPath(); c.arc(e.x, y, r, 0, 7); c.fill();
+          c.lineWidth = H * 0.008; c.strokeStyle = '#c4b5fd'; c.stroke();
+          const im = R.imgs[e.item.id];
+          if (runReady(im)) c.drawImage(im, e.x - r * 0.78, y - r * 0.78, r * 1.56, r * 1.56);
+          c.fillStyle = 'rgba(255,255,255,.8)'; c.beginPath(); c.ellipse(e.x - r * 0.5, y - r * 0.55, r * 0.18, r * 0.1, -0.7, 0, 7); c.fill();
+          c.restore();
+        } else if (e.k === 'finish') {
+          const fh = H * 0.42;
+          c.fillStyle = '#f472b6'; c.fillRect(e.x - H * 0.01, GY - fh, H * 0.02, fh); c.fillRect(e.x + H * 0.25, GY - fh, H * 0.02, fh);
+          c.fillStyle = '#fff'; c.fillRect(e.x - H * 0.01, GY - fh, H * 0.28, H * 0.07);
+          for (let i = 0; i < 8; i++) for (let j = 0; j < 2; j++) if ((i + j) % 2) { c.fillStyle = '#1f2937'; c.fillRect(e.x - H * 0.01 + i * H * 0.035, GY - fh + j * H * 0.035, H * 0.035, H * 0.035); }
+          c.fillStyle = '#facc15'; runStar(c, e.x + H * 0.13, GY - fh - H * 0.05, H * 0.04, t); c.fill();
+        }
+      }
+
+      // 가온이
+      const feet = GY + R.py;
+      const sh = Math.max(0.35, 1 + R.py / (H * 0.6));
+      c.fillStyle = 'rgba(80,40,60,.18)'; c.beginPath(); c.ellipse(px, GY + H * 0.004, PW * 0.3 * sh, H * 0.012 * sh, 0, 0, 7); c.fill();
+      const run = R.state === 'play' && R.onGround;
+      const bob = run ? Math.abs(Math.sin(t * 13)) * H * 0.014 : Math.sin(t * 3) * H * 0.003;
+      let rot = run ? Math.sin(t * 13) * 0.04 + 0.05 : (R.onGround ? 0 : -0.08);
+      if (R.spinT > 0) rot = -(1 - R.spinT / 0.55) * Math.PI * 2;
+      const blink = R.hurtT > 0 && Math.floor(R.hurtT * 10) % 2 === 0;
+      c.save();
+      c.translate(px, feet - bob - PH * 0.4);
+      c.rotate(rot);
+      if (run) c.scale(1 + Math.sin(t * 26) * 0.012, 1 - Math.sin(t * 26) * 0.012);
+      c.globalAlpha = blink ? 0.35 : 1;
+      if (runReady(R.avatar)) c.drawImage(R.avatar, -PW / 2, PH * 0.4 - PH * 0.86, PW, PH);
+      else { c.font = `${PH * 0.6}px sans-serif`; c.textAlign = 'center'; c.fillText('👧', 0, PH * 0.3); }
+      c.restore();
+      if (R.spinT > 0) {
+        c.fillStyle = '#fde047';
+        for (let i = 0; i < 4; i++) { const a = t * 8 + i * 1.57; runStar(c, px + Math.cos(a) * PW * 0.5, feet - PH * 0.4 + Math.sin(a) * PH * 0.5, H * 0.015, a); c.fill(); }
+      }
+      // 반짝이 · 흙먼지
+      for (const p of R.parts) {
+        c.globalAlpha = Math.max(0, p.life / p.max); c.fillStyle = p.col;
+        c.beginPath(); c.arc(p.x, p.y, p.r, 0, 7); c.fill();
+      }
+      c.globalAlpha = 1;
+      if (R.pops) {
+        c.globalAlpha = Math.min(1, R.pops.life * 2);
+        c.font = `bold ${H * 0.045}px Jua, sans-serif`; c.textAlign = 'center';
+        c.lineWidth = H * 0.01; c.strokeStyle = '#fff'; c.strokeText(R.pops.text, R.pops.x, R.pops.y);
+        c.fillStyle = '#db2777'; c.fillText(R.pops.text, R.pops.x, R.pops.y);
+        c.globalAlpha = 1;
+      }
+      // 진행 막대
+      if (R.state === 'play') {
+        const bw = Math.min(W * 0.4, 320), bx = (W - bw) / 2, by = H - H * 0.05;
+        c.fillStyle = 'rgba(255,255,255,.75)'; c.fillRect(bx, by, bw, H * 0.018);
+        c.fillStyle = '#ec4899'; c.fillRect(bx, by, bw * Math.min(1, R.done / RUN_MISSIONS), H * 0.018);
+        c.font = `${H * 0.035}px sans-serif`; c.textAlign = 'center'; c.fillText('🏁', bx + bw + H * 0.03, by + H * 0.018);
+      }
     }
   </script>
 </body>
